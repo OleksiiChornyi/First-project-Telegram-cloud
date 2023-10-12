@@ -1,0 +1,29 @@
+﻿<Window x:Class="Telegram_cloud.Properties_file"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telegram_cloud"
+        mc:Ignorable="d"
+        Title="Propertis file" Height="150" Width="250" Icon="/settings.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="Grid_Row_0" Height="Auto"></RowDefinition>
+            <RowDefinition x:Name="Grid_Row_1" Height="Auto"></RowDefinition>
+            <RowDefinition x:Name="Grid_Row_2" Height="Auto"></RowDefinition>
+            <RowDefinition x:Name="Grid_Row_3" Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="Grid_coloumn_0" Width="Auto"></ColumnDefinition>
+            <ColumnDefinition x:Name="Grid_coloumn_1" Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="Text_block_name" Margin="5" Grid.Row="0" Grid.Column="0" Text="File name: " VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Tahoma" FontSize="14"/>
+        <TextBlock x:Name="Text_block_file_name" Margin="5" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Tahoma" FontSize="14"/>
+        <TextBlock x:Name="Text_block_datetime" Margin="5" Grid.Row="1" Grid.Column="0" Text="Send time: " VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Tahoma" FontSize="14"/>
+        <TextBlock x:Name="Text_block_file_datetime" Margin="5" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Tahoma" FontSize="14"/>
+        <TextBlock x:Name="Text_block_is_pinned" Margin="5" Grid.Row="2" Grid.Column="0" Text="Is pinned: " VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Tahoma" FontSize="14"/>
+        <TextBlock x:Name="Text_block_file_is_pinned" Margin="5" Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Tahoma" FontSize="14"/>
+        <TextBlock x:Name="Text_block_size" Margin="5" Grid.Row="3" Grid.Column="0" Text="Size: " VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Tahoma" FontSize="14"/>
+        <TextBlock x:Name="Text_block_file_size" Margin="5" Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Tahoma" FontSize="14"/>
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\example\csharp\build64\CMakeFiles\f09b05c4cf4a766821b28be44d88982e\tl_generate_c.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\td\generate\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\work\Project_telegram_cloud\td\example\csharp\build64\td\generate\CMakeFiles\tl_generate_c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{EE561073-0999-31D3-A71E-B3207A0C9014}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

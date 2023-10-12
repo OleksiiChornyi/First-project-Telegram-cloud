@@ -1,0 +1,47 @@
+﻿<Window x:Name="Autorization_Window" x:Class="Telegram_cloud.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telegram_cloud"
+        mc:Ignorable="d"
+        Title="Authorization" Height="370" Width="400">
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="Gray" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Black" />
+
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TextBlock x:Name="TextBlock_phone_number_background"  Margin="7,10" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Enter a phone number" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=Phone_Number, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <TextBox Name="Phone_Number" Margin="2,10" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" Text=" " Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" PreviewTextInput="Phone_Number_PreviewTextInput" KeyDown="Phone_Number_KeyDown"/>
+        <TextBlock x:Name="TextBlock_Auth_Phone_Code_background" Margin="7,50" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Enter a authentification code from telegram" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=Auth_Phone_Code, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <TextBox Name="Auth_Phone_Code" Margin="2,50" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" Text=" " Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" KeyDown="Auth_Phone_Code_KeyDown"/>
+        <TextBlock x:Name="TextBlock_Password_background" Margin="7,90" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Enter a password" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=Password, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <TextBox Name="Password" Margin="2,90" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" Text=" " Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" KeyDown="Password_KeyDown" MouseEnter="Password_MouseEnter" MouseLeave="Password_MouseLeave" >
+            <TextBox.Effect>
+                <BlurEffect Radius="7"/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBlock x:Name="TextBlock_Email_Address_background" Margin="7,130" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Enter a email address" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=Email_Address, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <TextBox Name="Email_Address" Margin="2,130" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" Text=" " Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" PreviewTextInput="Email_Address_PreviewTextInput" KeyDown="Email_Address_KeyDown" />
+        <TextBlock x:Name="TextBlock_Auth_Email_Code_background" Margin="7,170" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Enter a authentification code from email" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=Auth_Email_Code, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <TextBox Name="Auth_Email_Code" Margin="2,170" Width="250" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" Text=" " Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" KeyDown="Auth_Email_Code_KeyDown" />
+        <Label Name="Phone_Number_label" Content="Press Enter" HorizontalAlignment="Left" Margin="257,10,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=Phone_Number, Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Background="Transparent" BorderBrush="Transparent"/>
+        <Label Name="Auth_Phone_Code_label" Content="Press Enter" HorizontalAlignment="Left" Margin="257,50,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=Auth_Phone_Code, Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Background="Transparent" BorderBrush="Transparent"/>
+        <Label Name="Password_label" Content="Press Enter" HorizontalAlignment="Left" Margin="257,90,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=Password, Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Background="Transparent" BorderBrush="Transparent"/>
+        <Label Name="Email_Address_label" Content="Press Enter" HorizontalAlignment="Left" Margin="257,130,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=Email_Address, Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Background="Transparent" BorderBrush="Transparent"/>
+        <Label Name="Auth_Email_Code_label" Content="Press Enter" HorizontalAlignment="Left" Margin="257,170,0,0" VerticalAlignment="Top" Visibility="{Binding ElementName=Auth_Email_Code, Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Background="Transparent" BorderBrush="Transparent"/>
+    </Grid>
+</Window>

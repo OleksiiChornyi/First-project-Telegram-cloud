@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Clocks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\FileFd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\IPAddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\MemoryMapping.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\path.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\platform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\PollFlags.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\rlimit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\ServerSocketFd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\signals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\sleep.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\SocketFd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\stacktrace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Stat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\StdStreams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\thread_local.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\UdpSocketFd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\uname.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\wstring_convert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Epoll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdBsd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdLinux.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdWindows.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Iocp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\KQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\NativeFd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Poll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Select.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadIdGuard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadPthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\WineventPoll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\generate\auto\mime_type_to_extension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\generate\auto\extension_to_mime_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\AsyncFileLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\base64.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BigNum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BufferedUdp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\check.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\crypto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\emoji.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ExitGuard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FileLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\filesystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\find_boundary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FloodControlGlobal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Gzip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\GzipByteFlow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Hints.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HttpUrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\JsonBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\logging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpmcQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\OptionParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\PathView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Random.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SharedSlice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Slice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StackAllocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Status.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StringBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsFileLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tl_parsers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\translit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsCerr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\unicode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\utf8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MimeType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Clocks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\CxCli.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\EventFd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\EventFdBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\FileFd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\FromApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\IPAddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\IoSlice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\MemoryMapping.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Mutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\path.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Poll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\PollBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\PollFlags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\rlimit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\RwMutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\ServerSocketFd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\signals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\sleep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\SocketFd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\stacktrace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Stat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\StdStreams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\thread_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\UdpSocketFd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\uname.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\wstring_convert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Epoll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdBsd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdLinux.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdWindows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Iocp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\KQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\NativeFd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Poll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\PollableFd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Select.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\skip_eintr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadIdGuard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadPthread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadStl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\WineventPoll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\AesCtrByteFlow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\algorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\as.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\AsyncFileLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\AtomicRead.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\base64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\benchmark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BigNum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\bits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BufferedFd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BufferedReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BufferedUdp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ByteFlow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\CancellationToken.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ChainScheduler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ChangesProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\check.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Closure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\CombinedLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ConcurrentHashTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\crypto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\DecTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Destructor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\emoji.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Enumerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\EpochBasedMemoryReclamation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ExitGuard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FileLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\filesystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\fixed_vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\find_boundary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashMapChunks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FloodControlFast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FloodControlGlobal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FloodControlStrict.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\format.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Gzip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\GzipByteFlow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HashMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HashSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HashTableUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HazardPointers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Heap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Hints.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HttpUrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\int_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\invoke.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\JsonBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MapNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MemoryLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MovableValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpmcQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpmcWaiter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpscPollableQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpscLinkQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Named.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\NullLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ObjectPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Observer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\optional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\OptionParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\OrderedEventsProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\overloaded.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\PathView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Promise.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ScopeGuard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SetNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SharedObjectPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SharedSlice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Slice-decl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Slice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SliceBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Span.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SpinLock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StackAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Status.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StealingQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Storer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StorerBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StringBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ThreadLocalStorage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ThreadSafeCounter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TimedStat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tl_helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tl_parsers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tl_storers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TlDowncastHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TlStorerToString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\translit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsCerr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsFileLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\type_traits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\UInt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\uint128.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\unicode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\unique_ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\unique_value_ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\utf8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Variant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\VectorQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\WaitFreeHashMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\WaitFreeHashSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\WaitFreeVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MimeType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\tdutils\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{B54B30CB-2DFA-30B0-8A9C-64F432D28770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{74FBF0FE-6B36-34BB-8836-44CFFE27E218}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

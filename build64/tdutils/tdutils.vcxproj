@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7476E3C0-A0E4-326C-81AF-CC40C9014E10}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>tdutils</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">tdutils.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">tdutils</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">tdutils.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">tdutils</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">tdutils.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">tdutils</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">tdutils.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">tdutils</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/black/source/vcpkg/installed/x64-windows/include" /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4324;4505;4814;4702</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;C:\Users\black\source\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;C:\Users\black\source\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/black/source/vcpkg/installed/x64-windows/include" /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4100;4127;4324;4505;4814;4702</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;C:\Users\black\source\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;C:\Users\black\source\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/black/source/vcpkg/installed/x64-windows/include" /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4100;4127;4324;4505;4814;4702</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;C:\Users\black\source\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;C:\Users\black\source\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/black/source/vcpkg/installed/x64-windows/include" /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4324;4505;4814;4702</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;C:\Users\black\source\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils;C:\Users\black\source\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\tdutils\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/work/Project_telegram_cloud/td/tdutils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/work/Project_telegram_cloud/td -BD:/work/Project_telegram_cloud/td/example/csharp/build64 --check-stamp-file D:/work/Project_telegram_cloud/td/example/csharp/build64/tdutils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\SelectLibraryConfigurations.cmake;C:\Users\black\source\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;D:\work\Project_telegram_cloud\td\tdutils\td\utils\config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/work/Project_telegram_cloud/td/tdutils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/work/Project_telegram_cloud/td -BD:/work/Project_telegram_cloud/td/example/csharp/build64 --check-stamp-file D:/work/Project_telegram_cloud/td/example/csharp/build64/tdutils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\SelectLibraryConfigurations.cmake;C:\Users\black\source\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;D:\work\Project_telegram_cloud\td\tdutils\td\utils\config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/work/Project_telegram_cloud/td/tdutils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/work/Project_telegram_cloud/td -BD:/work/Project_telegram_cloud/td/example/csharp/build64 --check-stamp-file D:/work/Project_telegram_cloud/td/example/csharp/build64/tdutils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\SelectLibraryConfigurations.cmake;C:\Users\black\source\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;D:\work\Project_telegram_cloud\td\tdutils\td\utils\config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/work/Project_telegram_cloud/td/tdutils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/work/Project_telegram_cloud/td -BD:/work/Project_telegram_cloud/td/example/csharp/build64 --check-stamp-file D:/work/Project_telegram_cloud/td/example/csharp/build64/tdutils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\SelectLibraryConfigurations.cmake;C:\Users\black\source\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;D:\work\Project_telegram_cloud\td\tdutils\td\utils\config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Clocks.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\FileFd.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\IPAddress.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\MemoryMapping.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\path.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\platform.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\PollFlags.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\rlimit.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\ServerSocketFd.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\signals.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\sleep.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\SocketFd.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\stacktrace.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Stat.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\StdStreams.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\thread_local.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\UdpSocketFd.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\uname.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\user.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\wstring_convert.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Epoll.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdBsd.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdLinux.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdWindows.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Iocp.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\KQueue.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\NativeFd.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Poll.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Select.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadIdGuard.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadPthread.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\WineventPoll.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\generate\auto\mime_type_to_extension.cpp">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\generate\auto\extension_to_mime_type.cpp">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\AsyncFileLog.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\base64.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BigNum.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\buffer.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BufferedUdp.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\check.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\crypto.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\emoji.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ExitGuard.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FileLog.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\filesystem.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\find_boundary.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashTable.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FloodControlGlobal.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Gzip.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\GzipByteFlow.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Hints.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HttpUrl.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\JsonBuilder.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\logging.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\misc.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpmcQueue.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\OptionParser.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\PathView.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Random.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SharedSlice.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Slice.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StackAllocator.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Status.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StringBuilder.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tests.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Time.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Timer.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsFileLog.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tl_parsers.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\translit.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsCerr.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsLog.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\unicode.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\utf8.cpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Clocks.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\config.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\CxCli.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\EventFd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\EventFdBase.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\FileFd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\FromApp.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\IPAddress.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\IoSlice.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\MemoryMapping.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Mutex.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\path.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\platform.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Poll.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\PollBase.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\PollFlags.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\rlimit.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\RwMutex.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\ServerSocketFd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\signals.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\sleep.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\SocketFd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\stacktrace.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\Stat.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\StdStreams.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\thread.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\thread_local.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\UdpSocketFd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\uname.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\user.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\wstring_convert.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Epoll.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdBsd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdLinux.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\EventFdWindows.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Iocp.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\KQueue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\NativeFd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Poll.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\PollableFd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\Select.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\skip_eintr.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadIdGuard.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadPthread.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\ThreadStl.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\port\detail\WineventPoll.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\AesCtrByteFlow.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\algorithm.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\as.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\AsyncFileLog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\AtomicRead.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\base64.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\benchmark.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BigNum.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\bits.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\buffer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BufferedFd.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BufferedReader.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\BufferedUdp.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ByteFlow.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\CancellationToken.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ChainScheduler.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ChangesProcessor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\check.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Closure.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\CombinedLog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\common.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ConcurrentHashTable.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Container.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Context.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\crypto.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\DecTree.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Destructor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\emoji.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Enumerator.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\EpochBasedMemoryReclamation.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ExitGuard.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FileLog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\filesystem.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\fixed_vector.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\find_boundary.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashMap.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashMapChunks.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashSet.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FlatHashTable.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FloodControlFast.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FloodControlGlobal.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\FloodControlStrict.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\format.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Gzip.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\GzipByteFlow.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Hash.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HashMap.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HashSet.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HashTableUtils.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HazardPointers.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Heap.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Hints.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\HttpUrl.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\int_types.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\invoke.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\JsonBuilder.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\List.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\logging.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MapNode.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MemoryLog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\misc.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MovableValue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpmcQueue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpmcWaiter.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpscPollableQueue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MpscLinkQueue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Named.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\NullLog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ObjectPool.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Observer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\optional.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\OptionParser.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\OrderedEventsProcessor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\overloaded.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Parser.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\PathView.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Promise.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\queue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Random.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ScopeGuard.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SetNode.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SharedObjectPool.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SharedSlice.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Slice-decl.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Slice.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SliceBuilder.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Span.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\SpinLock.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StackAllocator.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Status.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StealingQueue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Storer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StorerBase.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\StringBuilder.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tests.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ThreadLocalStorage.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\ThreadSafeCounter.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Time.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TimedStat.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Timer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tl_helpers.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tl_parsers.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\tl_storers.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TlDowncastHelper.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TlStorerToString.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\translit.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsCerr.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsFileLog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsList.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\TsLog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\type_traits.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\UInt.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\uint128.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\unicode.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\unique_ptr.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\unique_value_ptr.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\utf8.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\Variant.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\VectorQueue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\WaitFreeHashMap.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\WaitFreeHashSet.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\WaitFreeVector.h" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MimeType.cpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdutils\td\utils\MimeType.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build64\ZERO_CHECK.vcxproj">
+      <Project>{7574A599-E27C-32B7-8D43-4A31DCFF8F85}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build64\tdutils\generate\tdmime_auto.vcxproj">
+      <Project>{F1C415EB-EEE1-37B0-B0C0-BC0B0C2E1DDB}</Project>
+      <Name>tdmime_auto</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

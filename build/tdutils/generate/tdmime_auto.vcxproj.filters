@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\ed6ae7c5614aa9221a87ff10dc65c967\mime_type_to_extension.gperf.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\ed6ae7c5614aa9221a87ff10dc65c967\extension_to_mime_type.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\ed6ae7c5614aa9221a87ff10dc65c967\mime_type_to_extension.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\1f0edea07559f97e1e274d98c2515b96\tdmime_auto.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\tdutils\generate\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils\generate\CMakeFiles\tdmime_auto" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{7B95CD01-E3BB-3576-B25C-1A7105665BA6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

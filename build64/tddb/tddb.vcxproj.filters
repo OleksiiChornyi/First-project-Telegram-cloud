@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\Binlog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\BinlogEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\ConcurrentBinlog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\detail\BinlogEventsBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\detail\BinlogEventsProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteConnectionSafe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteDb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteKeyValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteKeyValueAsync.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteStatement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\TQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tddb\td\db\detail\RawSqliteDb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\Binlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\BinlogEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\BinlogHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\BinlogInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\ConcurrentBinlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\detail\BinlogEventsBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\binlog\detail\BinlogEventsProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\BinlogKeyValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\DbKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\KeyValueSyncInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SeqKeyValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteConnectionSafe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteDb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteKeyValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteKeyValueAsync.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteKeyValueSafe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\SqliteStatement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\TQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\TsSeqKeyValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tddb\td\db\detail\RawSqliteDb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\tddb\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{B54B30CB-2DFA-30B0-8A9C-64F432D28770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{74FBF0FE-6B36-34BB-8836-44CFFE27E218}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

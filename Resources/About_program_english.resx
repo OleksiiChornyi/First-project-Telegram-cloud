@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_program_text.Text" xml:space="preserve">
+    <value>The TelegramCloud program is a cloud storage service that uses the Telegram channel as a disk for storing files. You can upload files and folders to the program, which will be stored and interacted with both through this program and other Telegram applications.
+DESCRIPTION OF ALL FUNCTIONS
+	Account:
+Authorization is a function for logging into your Telegram account.
+About account is a function for information about your account.
+Log out – to log out of your Telegram account. However, after this function, the session (TeleCloud) in Telegram will not be terminated and you will need to do it yourself in the standard Telegram application.
+	Discs: Here you can change the discs (channels you have created in Telegram) with which you want to interact.
+	Functions:
+Add drive – create a new disk (Telegram channel) that will be used for cloud storage.
+Add drive from list – add an existing disk (Telegram channel) from the list of available channels.
+Update drive – refreshes the data stored in the selected disk.
+Download all drive – downloads the entire selected disk to the selected location on your computer.
+Download current directory – downloads the entire current directory to a selected location on your computer.
+Download preview of images – loads thumbnail copies of all Telegram images to preview in the app.
+Download preview of videos – loads reduced five-second copies of all videos from Telegram to preview them in the app.
+Download image preview from current directory – downloads thumbnail copies of all images in the current directory from Telegram to preview in the app.
+Download video preview from current directory – downloads thumbnail five-second preview copies of all videos in the current directory from Telegram to preview in the app.
+Delete all image previews – deletes all thumbnail copies of images from your computer.
+Delete all video previews – deletes all thumbnail five-second copies of videos from your computer.
+	Settings:
+Languages – changes the program language.
+Download photo previews automatically – Automatically download photo previews when you send them to drive.
+Download video previews automatically – Automatically download video previews when you send them to drive.
+About program – all information about the program.
+	Right-click functions:
+Create Directory – create a folder on the disk.
+Load file – download a file from your computer to the disk.
+Pin message – pins the selected message to the disk.
+Unpin message – unpins the selected message with the file on the disk.
+Download – downloads the selected file or folder to a location on your computer.
+Download a preview of file – downloads a thumbnail version of a file (photo or video) to your computer for display in the program.
+Move – moves the selected file or folder to the specified path. Folders should be separated by a backslash "\".
+Rename – renames the selected file or folder.
+Delete – deletes the selected file or folder from the disk.
+	Additional functions:
+Double-clicking the left mouse button – opens the selected file or goes to the selected folder.
+By dragging files or folders from your computer to the program, they will begin to be uploaded to the channel.
+Button back – goes to the folder in which it is now.
+LIMITATIONS.
+It is very important to read this paragraph, otherwise errors may occur while working with the program. The restrictions that are mentioned here are limitations or features of Telegram technology.
+	Sending files:
+The application is designed to store photos and videos, but you can upload files of any extension. However, if you try to upload a file with a non-common extension (for example, .webp), you may encounter an error. If you want to upload a file with a non-common extension, it is advisable to make sure that Telegram stores the file properly. To do this, send the file via the standard Telegram app and then try to open it from there. If you want to transfer a folder with a large number of files and/or a folder that contains a file with an uncommon extension, it is better to create an archive from it and send it.
+Telegram has a file weight limit of 2 GB.
+Telegram also has a limit on sending .gif files. If you send 10 gifs, Telegram won't send any more. If you encounter this problem, you need to restart the app. Perhaps in future Telegram updates, this problem will be resolved.
+If you send the same file to different folders on the disk, Telegram will treat them as one. This means that when you move or rename this file (or the folder in which this file is located), a failure may occur and instead of two files, you will have one. This problem can be avoided by not uploading the same file twice in a row.
+	Displaying files:
+When you upload a photo, the app displays thumbnails of the photo. When you upload a video, the app displays five seconds of the video. To load a preview of a photo, click the corresponding button in the functions or in the right-click menu. To delete all thumbnails from your computer, manually navigate to the program folder and delete the folder with the same name as the disk.
+There's a small chance that the preview may not work correctly, and another image may be displayed instead of one. However, it will open correctly. In this case, restarting the program will also help. 
+	Program functions:
+App functions work synchronously, which means that you can't start a new function before an old one has finished.
+If the files are not displayed correctly, refreshing the disk will help (the corresponding button in the functions)
+If you think that the program is freezing, you can completely shut it down and then restart it. If the program hangs again while performing the same actions, either you need to wait longer for it to complete, or you have found an error.
+If the file does not open (double-clicking the left mouse button), you need to refresh the disk, or, as a last resort, restart the program. 
+	Telegram restrictions:
+Telegram has some limitations that directly affect the operation of the program.
+For example, the text under the file to be sent has a limit of 1025 characters. This means that if the file path consists of more than 1025 characters, the program will generate an error.
+Also, Telegram provides 8 public and 500 private channels per user, which means that it is impossible to create more channels than this number.
+You can use the program, send it to others, and share your disk with others (to do this, you need to share the link via Telegram and add the disk in this program). But there may be limitations when using it with two people. For example, if two users perform an action on the same file at the same time, something may go wrong.
+	Additional limitations:
+Just like on Windows, Linus, or MacOS, you can't create more than two files or folders with the same name in one place. If you load an existing file, you will be asked whether to replace it.
+In the case of forced program termination when trying to authorize, you must separately install Microsoft C++.
+
+Author: Чорний Олексій</value>
+  </data>
+</root>

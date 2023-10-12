@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_account.Header" xml:space="preserve">
+    <value>About account</value>
+    <comment>3</comment>
+  </data>
+  <data name="About_program.Header" xml:space="preserve">
+    <value>About program</value>
+    <comment>28</comment>
+  </data>
+  <data name="About_program.ToolTip" xml:space="preserve">
+    <value>Detailed information about the program</value>
+    <comment>29</comment>
+  </data>
+  <data name="Account.Header" xml:space="preserve">
+    <value>Account</value>
+    <comment>1</comment>
+  </data>
+  <data name="Add_drive.Header" xml:space="preserve">
+    <value>Add drive</value>
+    <comment>8</comment>
+  </data>
+  <data name="Add_drive.ToolTip" xml:space="preserve">
+    <value>You can add a channel in this app</value>
+    <comment>9</comment>
+  </data>
+  <data name="Add_drive_from_list.Header" xml:space="preserve">
+    <value>Add drive from list</value>
+    <comment>10</comment>
+  </data>
+  <data name="Add_drive_from_list.ToolTip" xml:space="preserve">
+    <value>You can add drive in telegram.org and add this channel in this app</value>
+    <comment>11</comment>
+  </data>
+  <data name="Delete_All_Images_Preview.Header" xml:space="preserve">
+    <value>Delete all image previews</value>
+    <comment>25</comment>
+  </data>
+  <data name="Delete_All_Images_Preview.ToolTip" xml:space="preserve">
+    <value>Delete all preview files for images from your computer</value>
+    <comment>26</comment>
+  </data>
+  <data name="Delete_All_Videos_Preview.Header" xml:space="preserve">
+    <value>Delete all video preview</value>
+    <comment>251</comment>
+  </data>
+  <data name="Delete_All_Videos_Preview.ToolTip" xml:space="preserve">
+    <value>Delete all preview files for a video from your computer</value>
+    <comment>252</comment>
+  </data>
+  <data name="Download_all_drive.Header" xml:space="preserve">
+    <value>Download all drive</value>
+    <comment>27</comment>
+  </data>
+  <data name="Download_all_drive.ToolTip" xml:space="preserve">
+    <value>Load the entire current drive on the PC</value>
+    <comment>28</comment>
+  </data>
+  <data name="Download_current_directory.Header" xml:space="preserve">
+    <value>Download current directory</value>
+    <comment>301</comment>
+  </data>
+  <data name="Download_current_directory.ToolTip" xml:space="preserve">
+    <value>Load the entire current directory on the PC</value>
+    <comment>302</comment>
+  </data>
+  <data name="Download_photo_previews_automatically.ToolTip" xml:space="preserve">
+    <value>Automatically download photo previews when you send them to drive</value>
+    <comment>32</comment>
+  </data>
+  <data name="Download_video_previews_automatically.ToolTip" xml:space="preserve">
+    <value>Automatically download video previews when you send them to drive</value>
+    <comment>34</comment>
+  </data>
+  <data name="Drives_list.Header" xml:space="preserve">
+    <value>Drives</value>
+    <comment>6</comment>
+  </data>
+  <data name="Functions.Header" xml:space="preserve">
+    <value>Functions</value>
+    <comment>24</comment>
+  </data>
+  <data name="Load_Current_Directory_Image_Preview.Header" xml:space="preserve">
+    <value>Download image preview from current directory</value>
+    <comment>303</comment>
+  </data>
+  <data name="Load_Current_Directory_Image_Preview.ToolTip" xml:space="preserve">
+    <value>Load all images from current directory in low quality</value>
+    <comment>304</comment>
+  </data>
+  <data name="Load_Current_Directory_Video_Preview.Header" xml:space="preserve">
+    <value>Download video preview from current directory</value>
+    <comment>305</comment>
+  </data>
+  <data name="Load_Current_Directory_Video_Preview.ToolTip" xml:space="preserve">
+    <value>Load all videos from current directory in low quality</value>
+    <comment>306</comment>
+  </data>
+  <data name="Load_Image_Preview.Header" xml:space="preserve">
+    <value>Download preview of images</value>
+    <comment>14</comment>
+  </data>
+  <data name="Load_Image_Preview.ToolTip" xml:space="preserve">
+    <value>Download all images in low quality</value>
+    <comment>15</comment>
+  </data>
+  <data name="Load_Video_Preview.Header" xml:space="preserve">
+    <value>Download preview of videos</value>
+    <comment>14</comment>
+  </data>
+  <data name="Load_Video_Preview.ToolTip" xml:space="preserve">
+    <value>Load all videos in low quality</value>
+    <comment>15</comment>
+  </data>
+  <data name="Log_out_account.Header" xml:space="preserve">
+    <value>Log out</value>
+    <comment>4</comment>
+  </data>
+  <data name="Log_out_account.ToolTip" xml:space="preserve">
+    <value>You won't be able to log into that session, but it will stay in the telegram. To exit completely, in the telegram app, end the session with the signature 'Desktop TeleCloud 1.0 TDLib'.</value>
+    <comment>5</comment>
+  </data>
+  <data name="Menu_autorize.Header" xml:space="preserve">
+    <value>Authorization</value>
+    <comment>2</comment>
+  </data>
+  <data name="Menu_item_add_file.Header" xml:space="preserve">
+    <value>Load file</value>
+    <comment>21</comment>
+  </data>
+  <data name="Menu_item_create_directory.Header" xml:space="preserve">
+    <value>Create directory</value>
+    <comment>20</comment>
+  </data>
+  <data name="Menu_item_delete.Header" xml:space="preserve">
+    <value>Delete</value>
+    <comment>25</comment>
+  </data>
+  <data name="Menu_item_delete_current_preview.Header" xml:space="preserve">
+    <value>Delete a preview of file</value>
+    <comment>291</comment>
+  </data>
+  <data name="Menu_item_download.Header" xml:space="preserve">
+    <value>Download</value>
+    <comment>24</comment>
+  </data>
+  <data name="Menu_item_download_current_preview.Header" xml:space="preserve">
+    <value>Download a preview of file</value>
+    <comment>29</comment>
+  </data>
+  <data name="Menu_item_move.Header" xml:space="preserve">
+    <value>Move</value>
+    <comment>26</comment>
+  </data>
+  <data name="Menu_item_pin.Header" xml:space="preserve">
+    <value>Pin message</value>
+    <comment>22</comment>
+  </data>
+  <data name="Menu_item_rename.Header" xml:space="preserve">
+    <value>Rename</value>
+    <comment>27</comment>
+  </data>
+  <data name="Menu_item_unpin.Header" xml:space="preserve">
+    <value>Unpin message</value>
+    <comment>23</comment>
+  </data>
+  <data name="Progress_bar.ToolTip_In_progress" xml:space="preserve">
+    <value>In progress</value>
+    <comment>18</comment>
+  </data>
+  <data name="Progress_bar.ToolTip_Ready" xml:space="preserve">
+    <value>Ready</value>
+    <comment>17</comment>
+  </data>
+  <data name="Settings.Header" xml:space="preserve">
+    <value>Settings</value>
+    <comment>7</comment>
+  </data>
+  <data name="Settings_language.Header" xml:space="preserve">
+    <value>Languages</value>
+    <comment>16</comment>
+  </data>
+  <data name="Text_block_Download_photo_previews_automatically.Text" xml:space="preserve">
+    <value>Download photo previews automatically</value>
+    <comment>31</comment>
+  </data>
+  <data name="Text_block_Download_video_previews_automatically.Text" xml:space="preserve">
+    <value>Download video previews automatically</value>
+    <comment>33</comment>
+  </data>
+  <data name="Text_complete.Text" xml:space="preserve">
+    <value>Complete</value>
+    <comment>19</comment>
+  </data>
+  <data name="Update_current_drive.Header" xml:space="preserve">
+    <value>Update drive</value>
+    <comment>12</comment>
+  </data>
+  <data name="Update_current_drive.ToolTip" xml:space="preserve">
+    <value>Update all files in currwnt drive</value>
+    <comment>13</comment>
+  </data>
+</root>

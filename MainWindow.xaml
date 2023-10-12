@@ -1,0 +1,236 @@
+﻿<Window
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telegram_cloud"
+        x:Name="TdCloud_Window" x:Class="Telegram_cloud.MainWindow"
+        mc:Ignorable="d"
+        Title="Telegram Cloud" Height="500" Width="810" Closed="TdCloud_Window_Closed" Icon="/icon.png" SizeChanged="TdCloud_Window_SizeChanged" 
+        WindowStyle="None"
+        MinHeight="250" MinWidth="500" PreviewKeyDown="TdCloud_Window_PreviewKeyDown">
+    <!-- WindowStyle="None" -->
+    <Window.Resources>
+        <ControlTemplate x:Key="MyProgressBarTemplate" TargetType="{x:Type ProgressBar}">
+            <Grid>
+                <Rectangle Fill="{TemplateBinding Background}" />
+                <Border Name="PART_Track" />
+                <Decorator Name="PART_Indicator">
+                    <Grid>
+                        <Rectangle />
+                        <Grid Name="Animation" ClipToBounds="true">
+                            <Border Name="PART_GlowRect" Width="50" Height="{TemplateBinding ActualHeight}" HorizontalAlignment="Left">
+                                <Border.Background>
+                                    <SolidColorBrush Color="LightGreen" />
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Decorator>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid x:Name="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="Grid_Row_Tittle" Height="Auto"/>
+            <RowDefinition x:Name="Grid_Row_0" Height="Auto"/>
+            <RowDefinition x:Name="Grid_Row_1" Height="Auto"/>
+            <RowDefinition x:Name="Grid_Row_2" Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid MouseDown="StackPanel_MouseDown" VerticalAlignment="Top" Margin="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Image x:Name="HeaderIcon" Grid.Column="0" Width="20" Height="20" Margin="5, 4, 5, 4"  Source="/icon.ico" HorizontalAlignment="Left" />
+            <TextBlock x:Name="HeaderTitle" Text="Telegram Cloud" Grid.Column="1" Margin="5" TextAlignment="Left" FontSize="13" HorizontalAlignment="Left" />
+            <StackPanel Grid.Column="2" VerticalAlignment="Top"  Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="MinimizeButton" Style="{DynamicResource MinimizeButtonStyle}" Click="MinimizeWindow" KeyboardNavigation.IsTabStop="False"/>
+                <Button x:Name="MaximizeButton" Style="{DynamicResource MaximizeButtonStyle}" Click="MaximizeClick" KeyboardNavigation.IsTabStop="False" />
+                <Button x:Name="CloseButton"  Style="{DynamicResource CloseButtonStyle}" Click="CloseButton_Click" KeyboardNavigation.IsTabStop="False" />
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="Menu_grid" Grid.Row="1" VerticalAlignment="Top" MinHeight="{Binding Height, ElementName=Grid_Row_0, Mode=OneWay}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Menu Padding="2" FontFamily="Tahoma" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.Column="0">
+                <MenuItem x:Name="Account" Header="Account" Cursor="Hand">
+                    <MenuItem.Icon>
+                        <Image x:Name="Image_menu_item_account" Source="/account.png" Cursor="Hand" Margin="-5"/>
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="Menu_autorize" Header="Authorization" Cursor="Hand" Click="Menu_autorize_Click"/>
+                    <MenuItem x:Name="About_account" Header="About account" Cursor="Hand" Click="About_account_Click"/>
+                    <MenuItem x:Name="Log_out_account" Header="Log out" Cursor="Hand" Click="Log_out_account_Click"
+                          ToolTip="You won't be able to log into that session, but it will stay in the telegram. To exit completely, in the telegram app, end the session with the signature 'Desktop TeleCloud 1.0 TDLib'."/>
+                </MenuItem>
+                <MenuItem x:Name="Drives_list" Header="Drives" Cursor="Hand">
+                    <MenuItem.Icon>
+                        <Image Source="/drives.png" Cursor="Hand" Margin="-5"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="Functions" Header="Functions" Cursor="Hand">
+                    <MenuItem.Icon>
+                        <Image Cursor="Hand" Source="/functions.png" Margin="-6"/>
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="Add_drive" Header="Add drive" Cursor="Hand" ToolTip="You can add a channel in this app" Click="Add_drive_Click"/>
+                    <MenuItem x:Name="Add_drive_from_list" Header="Add drive from list" ToolTip="You can add drive in telegram.org and add this channel in this app" Cursor="Hand" Click="Add_drive_from_list_Click"/>
+                    <MenuItem x:Name="Update_current_drive" Header="Update drive" ToolTip="Update all files in currwnt drive" Cursor="Hand" Click="Update_current_drive_Click"/>
+                    <MenuItem x:Name="Download_all_drive" Header="Download all drive" ToolTip="Load the entire current drive on the PC" Cursor="Hand" Click="Download_all_drive_Click"/>
+                    <MenuItem x:Name="Download_current_directory" Header="Download current directory" ToolTip="Load the entire current directory on the PC" Cursor="Hand" Click="Download_current_directory_Click"/>
+                    <MenuItem x:Name="Load_Image_Preview" Header="Download preview of images" ToolTip="Load all images in low quality" Cursor="Hand" Click="Load_Image_Preview_Click"/>
+                    <MenuItem x:Name="Load_Video_Preview" Header="Download preview of videos" ToolTip="Load all videos in low quality" Cursor="Hand" Click="Load_Video_Preview_Click" />
+                    <MenuItem x:Name="Load_Current_Directory_Image_Preview" Header="Download image preview from current directory" ToolTip="Load all images from current directory in low quality" Cursor="Hand" Click="Load_Current_Directory_Image_Preview_Click"/>
+                    <MenuItem x:Name="Load_Current_Directory_Video_Preview" Header="Download video preview from current directory" ToolTip="Load all videos from current directory in low quality" Cursor="Hand" Click="Load_Current_Directory_Video_Preview_Click"/>
+                    <MenuItem x:Name="Delete_All_Images_Preview" Header="Delete all preview of images" ToolTip="Delete all preview of images from your computer" Cursor="Hand" Click="Delete_All_Images_Preview_Click"/>
+                    <MenuItem x:Name="Delete_All_Videos_Preview" Header="Delete all preview of videos" ToolTip="Delete all preview of videos from your computer" Cursor="Hand" Click="Delete_All_Videos_Preview_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="Settings" Header="Settings" Cursor="Hand">
+                    <MenuItem.Icon>
+                        <Image Source="/settings.png" Cursor="Hand" Margin="-5"/>
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="Settings_language" Header="Languages" Cursor="Hand">
+                        <MenuItem x:Name="Settings_language_english" Header="English" Cursor="Hand" Click="Settings_language_english_Click">
+                            <MenuItem.Icon>
+                                <RadioButton x:Name="Radio_button_settings_language_english" GroupName="Languages"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="Settings_language_Ukrainian" Header="Укріїнська" Cursor="Hand" Click="Settings_language_Ukrainian_Click">
+                            <MenuItem.Icon>
+                                <RadioButton x:Name="Radio_button_settings_language_Ukrainian" GroupName="Languages"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="Settings_language_russian" Header="Русский" Cursor="Hand" Click="Settings_language_russian_Click">
+                            <MenuItem.Icon>
+                                <RadioButton x:Name="Radio_button_settings_language_russian" GroupName="Languages"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem x:Name="Menu_item_download_photo_previews_automatically" Cursor="Hand">
+                        <MenuItem.Header>
+                            <CheckBox x:Name="Download_photo_previews_automatically" Margin="5" ToolTip="Automatically download photo previews when you send them to drive" Checked="Download_photo_previews_automatically_Checked" Unchecked="Download_photo_previews_automatically_Unchecked">
+                                <CheckBox.Content>
+                                    <TextBlock x:Name="Text_block_Download_photo_previews_automatically" TextWrapping="Wrap" Width="200" Text="Download photo previews automatically"></TextBlock>
+                                </CheckBox.Content>
+                            </CheckBox>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="Menu_item_download_video_previews_automatically" Cursor="Hand">
+                        <MenuItem.Header>
+                            <CheckBox x:Name="Download_video_previews_automatically" Margin="5" ToolTip="Automatically download video previews when you send them to drive" Cursor="Hand" Checked="Download_video_previews_automatically_Checked" Unchecked="Download_video_previews_automatically_Unchecked">
+                                <CheckBox.Content>
+                                    <TextBlock x:Name="Text_block_Download_video_previews_automatically" TextWrapping="Wrap" Width="200" Text="Download video previews automatically"></TextBlock>
+                                </CheckBox.Content>
+                            </CheckBox>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="Menu_item_open_click_or_double_click" Cursor="Hand">
+                        <MenuItem.Header>
+                            <CheckBox x:Name="Open_click_or_double_click" Margin="5" ToolTip="Open with click or double click" Cursor="Hand" Checked="Open_click_or_double_click_Checked" Unchecked="Open_click_or_double_click_Unchecked">
+                                <CheckBox.Content>
+                                    <TextBlock x:Name="Text_block_Open_click_or_double_click" TextWrapping="Wrap" Width="200" Text="Open with one click"/>
+                                </CheckBox.Content>
+                            </CheckBox>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="Menu_item_dark_theme" Cursor="Hand">
+                        <MenuItem.Header>
+                            <CheckBox x:Name="Dark_theme" Margin="5" ToolTip="Change to dark or whute theme" Cursor="Hand" Checked="Dark_theme_Checked" Unchecked="Dark_theme_Unchecked">
+                                <CheckBox.Content>
+                                    <TextBlock x:Name="Text_block_Dark_theme" TextWrapping="Wrap" Width="200" Text="Dark theme"/>
+                                </CheckBox.Content>
+                            </CheckBox>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="About_program" ToolTip="Detailed information about the program" Cursor="Hand" Click="About_program_Click">
+                        <MenuItem.Header>
+                            <TextBlock Text="About program"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <TextBlock x:Name="Text_block_Count_files" Padding="2" Margin="0,0,10,0" FontFamily="Tahoma" FontSize="20" TextWrapping="NoWrap" Grid.Column="1" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid x:Name="Progress_grid" VerticalAlignment="Top" Grid.Row="2" MinHeight="{Binding Height, ElementName=Grid_Row_1, Mode=OneWay}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="Grid_Col_0" Width="58"/>
+                <ColumnDefinition x:Name="Grid_Col_1" Width="*"/>
+                <ColumnDefinition x:Name="Grid_Col_2" Width="0*"/>
+                <ColumnDefinition x:Name="Grid_Col_3" Width="174"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Button_back" Grid.Column="0" Cursor="Hand" Width="{Binding Width, ElementName=Grid_Col_0, Mode=OneWay}" Click="Button_back_Click">
+                <TextBlock x:Name="Text_block_Button_back" Text="↩" FontFamily="Tahoma" FontSize="17" TextWrapping="NoWrap"/>
+            </Button>
+            <TextBox x:Name="Full_path" IsReadOnly="True" Grid.Column="1" FontFamily="Tahoma" FontSize="20" Width="{Binding Width, ElementName=Grid_Col_1, Mode=OneWay}"/>
+            <Button x:Name="Button_stop" Grid.Column="2" Visibility="Hidden" ToolTip="Space" Click="Button_stop_Click" IsVisibleChanged="Button_stop_IsVisibleChanged">
+                <Button.Resources>
+                    <Storyboard x:Key="StoryboardButtonStop">
+                        <DoubleAnimation Storyboard.TargetName="PART_Circle" Storyboard.TargetProperty="StrokeDashOffset" From="0" To="23" Duration="0:0:5" RepeatBehavior="1x"/>
+                    </Storyboard>
+                </Button.Resources>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Rectangle Fill="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" />
+                            <Ellipse Name="PART_Circle" Stroke="Black" Width="25" Height="25" StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                                <Ellipse.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="270"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Ellipse.RenderTransform>
+                                <Ellipse.StrokeDashArray>
+                                    <sys:Double>23</sys:Double>
+                                    <sys:Double>23</sys:Double>
+                                </Ellipse.StrokeDashArray>
+                            </Ellipse>
+                            <Rectangle Fill="Red" Width="12" Height="12"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <ProgressBar x:Name="Progress_bar" Grid.Column="3" FontFamily="Tahoma" FontSize="17" Value="0" Maximum="1" ToolTip="Ready" BorderBrush="AliceBlue" Width="{Binding Width, ElementName=Grid_Col_3, Mode=OneWay}" ValueChanged="Progress_bar_ValueChanged"/>
+            <ProgressBar x:Name="Progress_bar_add" Grid.Column="3" FontFamily="Tahoma" FontSize="17" Value="0" Maximum="1" ToolTip="{Binding ToolTip, ElementName=Progress_bar}" BorderBrush="AliceBlue" Width="{Binding Width, ElementName=Grid_Col_3, Mode=OneWay}" Template="{StaticResource MyProgressBarTemplate}" Background="#3FE6E6E6"/>
+            <TextBlock x:Name="Text_complete" Text="Complete" Visibility="Collapsed" Grid.Column="3" FontFamily="Tahoma" FontSize="17" Width="{Binding Width, ElementName=Grid_Col_3, Mode=OneWay}" HorizontalAlignment="Center"/>
+        </Grid>
+        <ListView x:Name="Directory_list" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="3" Width="Auto" Height="{Binding Height, ElementName=Grid_Row_2, Mode=OneWay}" 
+                  AllowDrop="True" SelectionMode="Extended" MouseDoubleClick="Directory_list_MouseDoubleClick" Drop="Directory_list_Drop" DragEnter="Directory_list_DragEnter" PreviewMouseWheel="Directory_list_PreviewMouseWheel" MouseLeftButtonUp="Directory_list_MouseLeftButtonUp" MouseRightButtonUp="Directory_list_MouseRightButtonUp" LayoutUpdated="Directory_list_LayoutUpdated" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Height="135" Width="135" Cursor="Hand" HorizontalAlignment="Center">
+                        <Image gif:ImageBehavior.AnimatedSource="{Binding Image_src}" Width="100" Height="100" />
+                        <Grid Width="100">
+                            <TextBlock Text="{Binding Name}" ToolTip="{Binding Name}" Margin="5,0,0,0" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="Menu_item_create_directory" Header="Create directory" Click="Menu_item_create_directory_Click" />
+                    <MenuItem x:Name="Menu_item_add_file" Header="Load file" Click="Menu_item_add_file_Click" />
+                    <MenuItem x:Name="Menu_item_pin" Header="Pin message" Click="Menu_item_pin_Click" />
+                    <MenuItem x:Name="Menu_item_unpin" Header="Unpin message" Click="Menu_item_unpin_Click" />
+                    <MenuItem x:Name="Menu_item_download" Header="Download" Click="Menu_item_download_Click" />
+                    <MenuItem x:Name="Menu_item_download_current_preview" Header="Download a preview of this file" Click="Menu_item_download_current_preview_Click"/>
+                    <MenuItem x:Name="Menu_item_delete_current_preview" Header="Delete a preview of this file" Click="Menu_item_delete_current_preview_Click"/>
+                    <MenuItem x:Name="Menu_item_move" Header="Move" Click="Menu_item_move_Click"/>
+                    <MenuItem x:Name="Menu_item_rename" Header="Rename" Click="Menu_item_rename_Click"/>
+                    <MenuItem x:Name="Menu_item_delete" Header="Delete" Click="Menu_item_delete_Click" />
+                    <MenuItem x:Name="Menu_item_properties" Header="Properties" Click="Menu_item_properties_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+    </Grid>
+</Window>

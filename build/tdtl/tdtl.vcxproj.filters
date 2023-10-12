@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_file_outputer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_file_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_generate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_outputer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_string_outputer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_writer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_file_outputer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_file_utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_generate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_outputer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_simple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_simple_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_string_outputer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\tdtl\td\tl\tl_writer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\tdtl\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2363FAAE-053F-3F53-9728-18DD0BFFD186}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9FF67F6F-ADC3-3436-B092-4CBE57C5D510}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

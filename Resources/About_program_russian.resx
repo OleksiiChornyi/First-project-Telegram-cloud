@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_program_text.Text" xml:space="preserve">
+    <value>Программа TelegramCloud – облачное хранилище, использующее канал в Telegram как диск для хранения файлов. В программу можно загружать файлы и папки, которые будут храниться и с которыми можно взаимодействовать как через эту программу, так и через другие приложения Telegram.
+ОПИСАНИЕ ВСЕХ ФУНКЦИЙ
+	Аккаунт:
+Авторизация – функция для входа в свой телеграмм аккаунт.
+Об аккаунте – функция для информации об аккаунте.
+Выйти из аккаунта – выйти из своего телеграмм аккаунта. Однако, после этой функции, сеанс (TeleCloud) в телеграмме не будет завершён и его нужно будет совершить самостоятельно в стандартном приложении Telegram.
+	Диски: здесь вы можете менять диски (созданные вами каналы в Telegram), с которыми хотите взаимодействовать.
+	Функции:
+Добавить диск – создать новый диск (Telegram канал), который будет использоваться для облачного хранения.
+Добавить диск из списка – добавить уже диск (Telegram канал) из списка доступных каналов.
+Обновить диск – обновить данные, которые находятся в выбранном диске.
+Скачать весь диск – скачивает весь выбранный диск в выбранное место на компьютере.
+Загрузить текущий каталог – скачивает весь текущий каталог в выбранное место на компьютере.
+Загрузить предварительный просмотр изображений– загружает уменьшенные копии всех изображений из Telegram для их предварительного просмотра в приложении.
+Загрузить предварительный просмотр видео – загружает уменьшенные пятисекундные копии всех видео из Telegram для их предварительного просмотра в приложении.
+Загрузить предпросмотр изображений из текущего каталога – загружает уменьшенные копии всех изображений из текущего каталога из Telegram для их предварительного просмотра в приложении.
+Загрузить предпросмотр видео из текущей директории – загружает уменьшенные пятисекундные копии всех видео из текущего каталога из Telegram для их предварительного просмотра в приложении.
+Удалить весь предварительный просмотр изображений – удаляет все уменьшенные копии изображений из вашего компьютера.
+Удалить весь предварительный просмотр видео – удаляет все уменьшенные пятисекундные копии видео из вашего компьютера.
+	Настройки:
+Языки – смена языка программы.
+Автоматически загружать предварительный просмотр фотографий – автоматически загружает предварительный просмотр фотографий при отправке их на диск.
+Автоматически загружать предварительный просмотр видео – автоматически загружает предварительный просмотр видео при отправке на диск.
+О программе – вся информация о программе.
+	Функции на правую кнопку мыши:
+Создать каталог – создать папку на диске.
+Загрузить файл – загрузить файл с компьютера да диск.
+Закрепить сообщение – закрепляет выбранное сообщение с файлом на диске.
+Открепить сообщение – открепляет выбранное сообщение с файлом на диске.
+Скачать – скачивает выбранный файл или папку в выбранное место на компьютере.
+Скачать предварительный просмотр файла – скачивает уменьшенную версию файла (фото или видео) на компьютер для отображения в программе.
+Удалить предварительный просмотр файла – удаляет уменьшенную версию файла (фото или видео) на компьютер для отображения в программе.
+Переместить – перемещает выбранный файл или папку в указанный путь. Разделять папки нужно символом обратного слеша «\».
+Переименовать – переименовывает выбранный файл или папку.
+Удалить – удаляет выбранный файл или папку с диска.
+	Дополнительный функции:
+Двойным щелчком левой кнопкой мыши можно открыть выбранный файл или перейти в выбранную папку.
+Перетащив файлы или папки из вашего компьютера в программу, они начнут загружаться на канал.
+Кнопка назад – переходит в папку, в которой сейчас находится.
+ОГРАНИЧЕНИЯ
+Очень важно прочитать этот пункт, иначе могут возникнуть ошибки при работе с программой. Ограничения, который здесь есть – ограничения или фишки технологии Telegram.
+	Отправка файлов:
+Приложение создано для хранения фотографий и видео, однако в него можно загружать файлы любых расширений. Однако, при попытке загрузить файл не распространённого расширения (к примеру, .webp), может возникнуть ошибка. Если вы хотите загрузить файл не распространённого расширения, желательно убедиться, что Telegram хранит этот файл как следует. Для этого отправьте этот файл через стандартное приложение Telegram и после попробуйте его открыть оттуда. Если вы хотите перенести папку с большим количеством файлов и/или папку, в которой есть файл не распространённого расширения, лучше создать из неё архив и отправить его.
+Telegram имеет ограничение на вес файла в 2 ГБ.
+Также Telegram имеет ограничение на отправку .gif файлов. При отправке 10 gif Telegram больше их не отправляет. В случае если вы столкнулись с такой проблемой, необходимо перезапустить приложение. Возможно, в будущих обновлениях Telegram, эта проблема будет решена.
+Если отправить на диск один и тот же файл в разные папки, Telegram будет воспринимать их как один. Это означает, что при перемещении или переименовании этого файла (или папки, в которой этот файл находится), может произойти сбой и вместо двух файлов останется один. Эту проблему можно избежать, не загружая один и тот же файл два раза подряд.
+	Отображение файлов:
+При загрузке фото, в программе отображаются их уменьшенные копии. При загрузке видео, в программе отображаются пять секунд из этого видео. Чтобы загрузить предварительный просмотр фото нужно нажать на соответствующую кнопку в функциях, либо в меню правой кнопки мыши. Чтобы удалить все уменьшенные копии из компьютера, необходимо вручную перейти в папку с программой и удалить папку с таким же названием, как и диск.
+С небольшим шансом, предварительный просмотр может работать некорректно, на месте одного изображения, показываться другое. Однако, его открытие происходит корректно. В этом случае также поможет перезапуск программы. 
+	Функции программы:
+Функции программы работают синхронно, что означает, что нельзя начать выполнять новую функцию прежде чем завершиться старая.
+В случае некорректного отображения файлов, поможет обновление диска (соответствующая кнопка в функциях)
+В случае, если вам кажется, что программа зависла, можно полностью выключить её и после заново запустить. Если при выполнении тех же действий она снова зависла, значит или вам нужно больше подождать их выполнения, или вы обнаружили ошибку.
+Если открытие файла (двойное нажатие левой кнопки мыши) не происходит, необходимо обновить диск, или, в крайнем случае, перезапустить программу. 
+	Ограничение Telegram:
+В Telegram есть некоторые ограничения, которые напрямую влияют работе программы.
+К примеру, текст под отправляемым файлом имеет ограничение в 1025 символов. Это означает, что, если путь к файлу будет состоять более чем из 1025 символов, программа выдаст ошибку.
+Также, на одного пользователя в Telegram даётся 8 публичных и 500 приватных каналов, что означает, что больше каналов чем данное количество невозможно создать.
+Вы можете пользоваться программой, отправлять её другим и делиться своим диском с другими (для этого нужно поделиться ссылкой через Telegram и добавить диск в этой программе). Но при пользовании вдвоём могут быть ограничения. Например, если два пользователя одновременно выполнят действие над одним и тем же файлом, что-то может пойти не так.
+	Дополнительные ограничения:
+Как и на ОС Windows, Linus или MacOS, невозможно создать в одном месте более двух файлов или папок с одинаковым названием. В случае загрузки уже существующего файла, выпадет вопрос о том, заменить ли его.
+В случае принудительного завершения программы при попытке авторизации нужно отдельно установить Microsoft C++.
+
+Автор: Чорний Олексій</value>
+  </data>
+</root>

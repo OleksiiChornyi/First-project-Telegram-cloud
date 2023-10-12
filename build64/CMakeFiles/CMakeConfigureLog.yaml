@@ -1,0 +1,570 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      The system is: Windows - 10.0.19044 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 08.02.2023 16:57:05.
+      Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\3.26.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\3.26.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\3.26.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.95
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/3.26.0-rc1/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 08.02.2023 16:57:08.
+      Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\3.26.0-rc1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\3.26.0-rc1\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\3.26.0-rc1\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.28
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/3.26.0-rc1/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-3t1h31"
+      binary: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-3t1h31"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      VCPKG_APPLOCAL_DEPS: "ON"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/Users/black/source/vcpkg"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-3t1h31
+        
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_f0d10.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 08.02.2023 16:57:10.
+        Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-3t1h31\\cmTC_f0d10.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_f0d10.dir\\Debug\\".
+          Creating directory "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-3t1h31\\Debug\\".
+          Creating directory "cmTC_f0d10.dir\\Debug\\cmTC_f0d10.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_f0d10.dir\\Debug\\cmTC_f0d10.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f0d10.dir\\Debug\\\\" /Fd"cmTC_f0d10.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30706 для x64
+          CMakeCXXCompilerABI.cpp
+          (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f0d10.dir\\Debug\\\\" /Fd"cmTC_f0d10.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-3t1h31\\Debug\\cmTC_f0d10.exe" /INCREMENTAL /ILK:"cmTC_f0d10.dir\\Debug\\cmTC_f0d10.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-3t1h31/Debug/cmTC_f0d10.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-3t1h31/Debug/cmTC_f0d10.lib" /MACHINE:X64 /pdbthreads:4  /machine:x64 cmTC_f0d10.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_f0d10.vcxproj -> D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-3t1h31\\Debug\\cmTC_f0d10.exe
+        PostBuildEvent:
+          setlocal
+          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/black/source/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-3t1h31/Debug/cmTC_f0d10.exe -installedDir C:/Users/black/source/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+          if %errorlevel% neq 0 goto :cmEnd
+          :cmEnd
+          endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+          :cmErrorLevel
+          exit /b %1
+          :cmDone
+          if %errorlevel% neq 0 goto :VCEnd
+          :VCEnd
+        FinalizeBuildStatus:
+          Deleting file "cmTC_f0d10.dir\\Debug\\cmTC_f0d10.tlog\\unsuccessfulbuild".
+          Touching "cmTC_f0d10.dir\\Debug\\cmTC_f0d10.tlog\\cmTC_f0d10.lastbuildstate".
+        Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-3t1h31\\cmTC_f0d10.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.75
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-oo9s0n"
+      binary: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-oo9s0n"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      VCPKG_APPLOCAL_DEPS: "ON"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/Users/black/source/vcpkg"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-oo9s0n
+        
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_8bfe1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 08.02.2023 16:57:12.
+        Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-oo9s0n\\cmTC_8bfe1.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_8bfe1.dir\\Debug\\".
+          Creating directory "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-oo9s0n\\Debug\\".
+          Creating directory "cmTC_8bfe1.dir\\Debug\\cmTC_8bfe1.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_8bfe1.dir\\Debug\\cmTC_8bfe1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8bfe1.dir\\Debug\\\\" /Fd"cmTC_8bfe1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30706 для x64
+          CMakeCCompilerABI.c
+          (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8bfe1.dir\\Debug\\\\" /Fd"cmTC_8bfe1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-oo9s0n\\Debug\\cmTC_8bfe1.exe" /INCREMENTAL /ILK:"cmTC_8bfe1.dir\\Debug\\cmTC_8bfe1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-oo9s0n/Debug/cmTC_8bfe1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-oo9s0n/Debug/cmTC_8bfe1.lib" /MACHINE:X64 /pdbthreads:4  /machine:x64 cmTC_8bfe1.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_8bfe1.vcxproj -> D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-oo9s0n\\Debug\\cmTC_8bfe1.exe
+        PostBuildEvent:
+          setlocal
+          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/black/source/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-oo9s0n/Debug/cmTC_8bfe1.exe -installedDir C:/Users/black/source/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+          if %errorlevel% neq 0 goto :cmEnd
+          :cmEnd
+          endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+          :cmErrorLevel
+          exit /b %1
+          :cmDone
+          if %errorlevel% neq 0 goto :VCEnd
+          :VCEnd
+        FinalizeBuildStatus:
+          Deleting file "cmTC_8bfe1.dir\\Debug\\cmTC_8bfe1.tlog\\unsuccessfulbuild".
+          Touching "cmTC_8bfe1.dir\\Debug\\cmTC_8bfe1.tlog\\cmTC_8bfe1.lastbuildstate".
+        Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-oo9s0n\\cmTC_8bfe1.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.58
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "C:/Users/black/source/vcpkg/scripts/buildsystems/vcpkg.cmake:843 (_find_package)"
+      - "CMakeLists.txt:126 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-awzgb8"
+      binary: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-awzgb8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_MODULE_PATH: "D:/work/Project_telegram_cloud/td/CMake;"
+      VCPKG_APPLOCAL_DEPS: "ON"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/Users/black/source/vcpkg"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-awzgb8
+        
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_03e1e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 08.02.2023 16:57:15.
+        Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\cmTC_03e1e.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_03e1e.dir\\Debug\\".
+          Creating directory "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\Debug\\".
+          Creating directory "cmTC_03e1e.dir\\Debug\\cmTC_03e1e.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_03e1e.dir\\Debug\\cmTC_03e1e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_03e1e.dir\\Debug\\\\" /Fd"cmTC_03e1e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\src.c"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30706 для x64
+          src.c
+          (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_03e1e.dir\\Debug\\\\" /Fd"cmTC_03e1e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\src.c"
+        D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\src.c(1,10): fatal error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\cmTC_03e1e.vcxproj]
+        Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\cmTC_03e1e.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\cmTC_03e1e.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\src.c(1,10): fatal error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-awzgb8\\cmTC_03e1e.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.66
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "C:/Users/black/source/vcpkg/scripts/buildsystems/vcpkg.cmake:843 (_find_package)"
+      - "CMakeLists.txt:126 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-9l7ib9"
+      binary: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-9l7ib9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_MODULE_PATH: "D:/work/Project_telegram_cloud/td/CMake;"
+      VCPKG_APPLOCAL_DEPS: "ON"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/Users/black/source/vcpkg"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-9l7ib9
+        
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_7cf62.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 08.02.2023 16:57:16.
+        Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\cmTC_7cf62.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_7cf62.dir\\Debug\\".
+          Creating directory "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\Debug\\".
+          Creating directory "cmTC_7cf62.dir\\Debug\\cmTC_7cf62.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_7cf62.dir\\Debug\\cmTC_7cf62.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7cf62.dir\\Debug\\\\" /Fd"cmTC_7cf62.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\CheckFunctionExists.c"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30706 для x64
+          CheckFunctionExists.c
+          (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7cf62.dir\\Debug\\\\" /Fd"cmTC_7cf62.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\Debug\\cmTC_7cf62.exe" /INCREMENTAL /ILK:"cmTC_7cf62.dir\\Debug\\cmTC_7cf62.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-9l7ib9/Debug/cmTC_7cf62.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-9l7ib9/Debug/cmTC_7cf62.lib" /MACHINE:X64 /pdbthreads:4  /machine:x64 cmTC_7cf62.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\cmTC_7cf62.vcxproj]
+        Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\cmTC_7cf62.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\cmTC_7cf62.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-9l7ib9\\cmTC_7cf62.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.85
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "C:/Users/black/source/vcpkg/scripts/buildsystems/vcpkg.cmake:843 (_find_package)"
+      - "CMakeLists.txt:126 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-tq5sjs"
+      binary: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-tq5sjs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_MODULE_PATH: "D:/work/Project_telegram_cloud/td/CMake;"
+      VCPKG_APPLOCAL_DEPS: "ON"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/Users/black/source/vcpkg"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-tq5sjs
+        
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_e9d5a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 08.02.2023 16:57:17.
+        Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\cmTC_e9d5a.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_e9d5a.dir\\Debug\\".
+          Creating directory "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\Debug\\".
+          Creating directory "cmTC_e9d5a.dir\\Debug\\cmTC_e9d5a.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_e9d5a.dir\\Debug\\cmTC_e9d5a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e9d5a.dir\\Debug\\\\" /Fd"cmTC_e9d5a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\CheckFunctionExists.c"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30706 для x64
+          CheckFunctionExists.c
+          (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e9d5a.dir\\Debug\\\\" /Fd"cmTC_e9d5a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\Debug\\cmTC_e9d5a.exe" /INCREMENTAL /ILK:"cmTC_e9d5a.dir\\Debug\\cmTC_e9d5a.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-tq5sjs/Debug/cmTC_e9d5a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-tq5sjs/Debug/cmTC_e9d5a.lib" /MACHINE:X64 /pdbthreads:4  /machine:x64 cmTC_e9d5a.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\cmTC_e9d5a.vcxproj]
+        Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\cmTC_e9d5a.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\cmTC_e9d5a.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-tq5sjs\\cmTC_e9d5a.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.86
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/GenerateExportHeader.cmake:206 (check_cxx_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/GenerateExportHeader.cmake:263 (_check_cxx_compiler_attribute)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/GenerateExportHeader.cmake:420 (_test_compiler_has_deprecated)"
+      - "CMakeLists.txt:946 (generate_export_header)"
+    checks:
+      - "Performing Test COMPILER_HAS_DEPRECATED_ATTR"
+    directories:
+      source: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-qzcb9q"
+      binary: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-qzcb9q"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /utf-8 /GR- /W4 /wd4100 /wd4127 /wd4324 /wd4505 /wd4814 /wd4702 /bigobj"
+      CMAKE_MODULE_PATH: "D:/work/Project_telegram_cloud/td/CMake;"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      VCPKG_APPLOCAL_DEPS: "ON"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/Users/black/source/vcpkg"
+    buildResult:
+      variable: "COMPILER_HAS_DEPRECATED_ATTR"
+      cached: true
+      stdout: |
+        Change Dir: D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-qzcb9q
+        
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_d8392.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 08.02.2023 16:57:20.
+        Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_d8392.dir\\Debug\\".
+          Creating directory "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\Debug\\".
+          Creating directory "cmTC_d8392.dir\\Debug\\cmTC_d8392.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_d8392.dir\\Debug\\cmTC_d8392.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED_ATTR /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR- /Fo"cmTC_d8392.dir\\Debug\\\\" /Fd"cmTC_d8392.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TP /wd4100 /wd4127 /wd4324 /wd4505 /wd4814 /wd4702 /errorReport:queue  /utf-8 /bigobj "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30706 для x64
+          src.cxx
+        D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,16): error C2065: __deprecated__: необъявленный идентификатор [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+        D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,31): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+        D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,33): error C2062: тип "int" не требуется [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+        D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,48): error C2143: синтаксическая ошибка: отсутствие ";" перед "{" [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+        D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,48): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа) [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+        D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(2,25): error C3861: somefunc: идентификатор не найден [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+          (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+          cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED_ATTR /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR- /Fo"cmTC_d8392.dir\\Debug\\\\" /Fd"cmTC_d8392.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TP /wd4100 /wd4127 /wd4324 /wd4505 /wd4814 /wd4702 /errorReport:queue  /utf-8 /bigobj "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx"
+        Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,16): error C2065: __deprecated__: необъявленный идентификатор [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+          D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,31): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+          D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,33): error C2062: тип "int" не требуется [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+          D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,48): error C2143: синтаксическая ошибка: отсутствие ";" перед "{" [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+          D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(1,48): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа) [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+          D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\src.cxx(2,25): error C3861: somefunc: идентификатор не найден [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-qzcb9q\\cmTC_d8392.vcxproj]
+        
+            0 Warning(s)
+            6 Error(s)
+        
+        Time Elapsed 00:00:00.70
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/GenerateExportHeader.cmake:206 (check_cxx_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/GenerateExportHeader.cmake:269 (_check_cxx_compiler_attribute)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/GenerateExportHeader.cmake:420 (_test_compiler_has_deprecated)"
+      - "CMakeLists.txt:946 (generate_export_header)"
+    checks:
+      - "Performing Test COMPILER_HAS_DEPRECATED"
+    directories:
+      source: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-l24mux"
+      binary: "D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-l24mux"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /utf-8 /GR- /W4 /wd4100 /wd4127 /wd4324 /wd4505 /wd4814 /wd4702 /bigobj"
+      CMAKE_MODULE_PATH: "D:/work/Project_telegram_cloud/td/CMake;"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      VCPKG_APPLOCAL_DEPS: "ON"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/Users/black/source/vcpkg"
+    buildResult:
+      variable: "COMPILER_HAS_DEPRECATED"
+      cached: true
+      stdout: |
+        Change Dir: D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-l24mux
+        
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_4c912.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 08.02.2023 16:57:21.
+        Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\cmTC_4c912.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_4c912.dir\\Debug\\".
+          Creating directory "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\Debug\\".
+          Creating directory "cmTC_4c912.dir\\Debug\\cmTC_4c912.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_4c912.dir\\Debug\\cmTC_4c912.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR- /Fo"cmTC_4c912.dir\\Debug\\\\" /Fd"cmTC_4c912.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TP /wd4100 /wd4127 /wd4324 /wd4505 /wd4814 /wd4702 /errorReport:queue  /utf-8 /bigobj "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\src.cxx"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30706 для x64
+          src.cxx
+        D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\src.cxx(2,25): warning C4996: 'somefunc': объявлен deprecate [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\cmTC_4c912.vcxproj]
+          (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+          cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR- /Fo"cmTC_4c912.dir\\Debug\\\\" /Fd"cmTC_4c912.dir\\Debug\\vc143.pdb" /external:W4 /Gd /TP /wd4100 /wd4127 /wd4324 /wd4505 /wd4814 /wd4702 /errorReport:queue  /utf-8 /bigobj "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\src.cxx"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\Debug\\cmTC_4c912.exe" /INCREMENTAL /ILK:"cmTC_4c912.dir\\Debug\\cmTC_4c912.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-l24mux/Debug/cmTC_4c912.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-l24mux/Debug/cmTC_4c912.lib" /MACHINE:X64 /pdbthreads:4  /machine:x64 cmTC_4c912.dir\\Debug\\src.obj
+          cmTC_4c912.vcxproj -> D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\Debug\\cmTC_4c912.exe
+        PostBuildEvent:
+          setlocal
+          C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/black/source/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/work/Project_telegram_cloud/td/example/csharp/build64/CMakeFiles/CMakeScratch/TryCompile-l24mux/Debug/cmTC_4c912.exe -installedDir C:/Users/black/source/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+          if %errorlevel% neq 0 goto :cmEnd
+          :cmEnd
+          endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+          :cmErrorLevel
+          exit /b %1
+          :cmDone
+          if %errorlevel% neq 0 goto :VCEnd
+          :VCEnd
+        FinalizeBuildStatus:
+          Deleting file "cmTC_4c912.dir\\Debug\\cmTC_4c912.tlog\\unsuccessfulbuild".
+          Touching "cmTC_4c912.dir\\Debug\\cmTC_4c912.tlog\\cmTC_4c912.lastbuildstate".
+        Done Building Project "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\cmTC_4c912.vcxproj" (default targets).
+        
+        Build succeeded.
+        
+        "D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\cmTC_4c912.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\src.cxx(2,25): warning C4996: 'somefunc': объявлен deprecate [D:\\work\\Project_telegram_cloud\\td\\example\\csharp\\build64\\CMakeFiles\\CMakeScratch\\TryCompile-l24mux\\cmTC_4c912.vcxproj]
+        
+            1 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.69
+        
+      exitCode: 0
+...

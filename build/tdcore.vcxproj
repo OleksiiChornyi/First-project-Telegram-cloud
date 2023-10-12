@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{20FEBED4-4EEC-398F-8390-0D5EB9E4BE79}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>Win32</Platform>
+    <ProjectName>tdcore</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\work\Project_telegram_cloud\td\example\csharp\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tdcore.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tdcore</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\work\Project_telegram_cloud\td\example\csharp\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tdcore.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tdcore</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\work\Project_telegram_cloud\td\example\csharp\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">tdcore.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">tdcore</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\work\Project_telegram_cloud\td\example\csharp\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">tdcore.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">tdcore</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/black/source/vcpkg/installed/x86-windows/include" /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4324;4505;4814;4702</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;C:\Users\black\source\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;C:\Users\black\source\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/black/source/vcpkg/installed/x86-windows/include" /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4100;4127;4324;4505;4814;4702</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;C:\Users\black\source\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;C:\Users\black\source\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/black/source/vcpkg/installed/x86-windows/include" /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4100;4127;4324;4505;4814;4702</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;C:\Users\black\source\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;C:\Users\black\source\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/black/source/vcpkg/installed/x86-windows/include" /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4324;4505;4814;4702</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NTDDI_VERSION=0x06020000;WINVER=0x0602;_WIN32_WINNT=0x0602;PSAPI_VERSION=1;NOMINMAX;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_FILE_OFFSET_BITS=64;_GNU_SOURCE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;C:\Users\black\source\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\Project_telegram_cloud\td;D:\work\Project_telegram_cloud\td\td\generate\auto;D:\work\Project_telegram_cloud\td\tdactor;D:\work\Project_telegram_cloud\td\tdutils;D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils;D:\work\Project_telegram_cloud\td\tdnet;D:\work\Project_telegram_cloud\td\tddb;C:\Users\black\source\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work\Project_telegram_cloud\td\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/work/Project_telegram_cloud/td/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/work/Project_telegram_cloud/td -BD:/work/Project_telegram_cloud/td/example/csharp/build --check-stamp-file D:/work/Project_telegram_cloud/td/example/csharp/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.26\Modules\BasicConfigVersion-ExactVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.26\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\GenerateExportHeader.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\exportheader.cmake.in;C:\Users\black\source\vcpkg\installed\x86-windows\share\openssl\vcpkg-cmake-wrapper.cmake;C:\Users\black\source\vcpkg\installed\x86-windows\share\zlib\vcpkg-cmake-wrapper.cmake;C:\Users\black\source\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\work\Project_telegram_cloud\td\.git\HEAD;D:\work\Project_telegram_cloud\td\.git\refs\heads\master;D:\work\Project_telegram_cloud\td\CMake\AddCXXCompilerFlag.cmake;D:\work\Project_telegram_cloud\td\CMake\FindReadline.cmake;D:\work\Project_telegram_cloud\td\CMake\GeneratePkgConfig.cmake;D:\work\Project_telegram_cloud\td\CMake\GetGitRevisionDescription.cmake;D:\work\Project_telegram_cloud\td\CMake\GetGitRevisionDescription.cmake.in;D:\work\Project_telegram_cloud\td\CMake\PreventInSourceBuild.cmake;D:\work\Project_telegram_cloud\td\CMake\TdSetUpCompiler.cmake;D:\work\Project_telegram_cloud\td\CMake\illumos.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeCCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeCXXCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeRCCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeSystem.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\git-data\grabRef.cmake;D:\work\Project_telegram_cloud\td\td\telegram\GitCommitHash.cpp.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/work/Project_telegram_cloud/td/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/work/Project_telegram_cloud/td -BD:/work/Project_telegram_cloud/td/example/csharp/build --check-stamp-file D:/work/Project_telegram_cloud/td/example/csharp/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.26\Modules\BasicConfigVersion-ExactVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.26\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\GenerateExportHeader.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\exportheader.cmake.in;C:\Users\black\source\vcpkg\installed\x86-windows\share\openssl\vcpkg-cmake-wrapper.cmake;C:\Users\black\source\vcpkg\installed\x86-windows\share\zlib\vcpkg-cmake-wrapper.cmake;C:\Users\black\source\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\work\Project_telegram_cloud\td\.git\HEAD;D:\work\Project_telegram_cloud\td\.git\refs\heads\master;D:\work\Project_telegram_cloud\td\CMake\AddCXXCompilerFlag.cmake;D:\work\Project_telegram_cloud\td\CMake\FindReadline.cmake;D:\work\Project_telegram_cloud\td\CMake\GeneratePkgConfig.cmake;D:\work\Project_telegram_cloud\td\CMake\GetGitRevisionDescription.cmake;D:\work\Project_telegram_cloud\td\CMake\GetGitRevisionDescription.cmake.in;D:\work\Project_telegram_cloud\td\CMake\PreventInSourceBuild.cmake;D:\work\Project_telegram_cloud\td\CMake\TdSetUpCompiler.cmake;D:\work\Project_telegram_cloud\td\CMake\illumos.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeCCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeCXXCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeRCCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeSystem.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\git-data\grabRef.cmake;D:\work\Project_telegram_cloud\td\td\telegram\GitCommitHash.cpp.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/work/Project_telegram_cloud/td/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/work/Project_telegram_cloud/td -BD:/work/Project_telegram_cloud/td/example/csharp/build --check-stamp-file D:/work/Project_telegram_cloud/td/example/csharp/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Program Files\CMake\share\cmake-3.26\Modules\BasicConfigVersion-ExactVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.26\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\GenerateExportHeader.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\exportheader.cmake.in;C:\Users\black\source\vcpkg\installed\x86-windows\share\openssl\vcpkg-cmake-wrapper.cmake;C:\Users\black\source\vcpkg\installed\x86-windows\share\zlib\vcpkg-cmake-wrapper.cmake;C:\Users\black\source\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\work\Project_telegram_cloud\td\.git\HEAD;D:\work\Project_telegram_cloud\td\.git\refs\heads\master;D:\work\Project_telegram_cloud\td\CMake\AddCXXCompilerFlag.cmake;D:\work\Project_telegram_cloud\td\CMake\FindReadline.cmake;D:\work\Project_telegram_cloud\td\CMake\GeneratePkgConfig.cmake;D:\work\Project_telegram_cloud\td\CMake\GetGitRevisionDescription.cmake;D:\work\Project_telegram_cloud\td\CMake\GetGitRevisionDescription.cmake.in;D:\work\Project_telegram_cloud\td\CMake\PreventInSourceBuild.cmake;D:\work\Project_telegram_cloud\td\CMake\TdSetUpCompiler.cmake;D:\work\Project_telegram_cloud\td\CMake\illumos.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeCCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeCXXCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeRCCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeSystem.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\git-data\grabRef.cmake;D:\work\Project_telegram_cloud\td\td\telegram\GitCommitHash.cpp.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/work/Project_telegram_cloud/td/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/work/Project_telegram_cloud/td -BD:/work/Project_telegram_cloud/td/example/csharp/build --check-stamp-file D:/work/Project_telegram_cloud/td/example/csharp/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Program Files\CMake\share\cmake-3.26\Modules\BasicConfigVersion-ExactVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.26\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\GenerateExportHeader.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\exportheader.cmake.in;C:\Users\black\source\vcpkg\installed\x86-windows\share\openssl\vcpkg-cmake-wrapper.cmake;C:\Users\black\source\vcpkg\installed\x86-windows\share\zlib\vcpkg-cmake-wrapper.cmake;C:\Users\black\source\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\work\Project_telegram_cloud\td\.git\HEAD;D:\work\Project_telegram_cloud\td\.git\refs\heads\master;D:\work\Project_telegram_cloud\td\CMake\AddCXXCompilerFlag.cmake;D:\work\Project_telegram_cloud\td\CMake\FindReadline.cmake;D:\work\Project_telegram_cloud\td\CMake\GeneratePkgConfig.cmake;D:\work\Project_telegram_cloud\td\CMake\GetGitRevisionDescription.cmake;D:\work\Project_telegram_cloud\td\CMake\GetGitRevisionDescription.cmake.in;D:\work\Project_telegram_cloud\td\CMake\PreventInSourceBuild.cmake;D:\work\Project_telegram_cloud\td\CMake\TdSetUpCompiler.cmake;D:\work\Project_telegram_cloud\td\CMake\illumos.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeCCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeCXXCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeRCCompiler.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\3.26.0-rc1\CMakeSystem.cmake;D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\git-data\grabRef.cmake;D:\work\Project_telegram_cloud\td\td\telegram\GitCommitHash.cpp.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\work\Project_telegram_cloud\td\example\csharp\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\AuthData.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\ConnectionManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\DhHandshake.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\Handshake.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\HandshakeActor.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\HttpTransport.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\IStreamTransport.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\KDF.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\Ping.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\PingConnection.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\ProxySecret.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\RawConnection.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\RSA.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\SessionConnection.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\TcpTransport.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\TlsInit.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\TlsReaderByteFlow.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\Transport.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\mtproto\utils.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Account.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\AnimationsManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Application.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\AttachMenuManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\AudiosManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\AuthManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\AutoDownloadSettings.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\AutosaveManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\BackgroundManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\BackgroundType.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\BotCommand.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\BotCommandScope.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\BotMenuButton.cpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\BotMenuButton.h" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\CallActor.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\CallDiscardReason.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\CallManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\CallbackQueriesManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ChannelParticipantFilter.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ChatReactions.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ClientActor.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ConfigManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ConnectionState.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Contact.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ContactsManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\CountryInfoManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DelayDispatcher.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Dependencies.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DeviceTokenManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DhCache.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogAction.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogActionBar.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogAdministrator.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogDb.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogEventLog.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogFilter.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogId.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogInviteLink.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogLocation.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogNotificationSettings.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogParticipant.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogParticipantFilter.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogSource.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Dimensions.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Document.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DocumentsManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DownloadManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DownloadManagerCallback.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\DraftMessage.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\EmailVerification.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\EmojiGroup.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\EmojiGroupType.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\EmojiStatus.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\FileReferenceManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileBitmask.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileDb.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileDownloader.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileEncryptionKey.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileFromBytes.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileGcParameters.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileGcWorker.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileGenerateManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileHashUploader.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLoader.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLoaderUtils.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLoadManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileStats.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileStatsWorker.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileType.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileUploader.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\PartsManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\files\ResourceManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopic.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicEditedData.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicIcon.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicInfo.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Game.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\GameManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Global.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallParticipant.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallParticipantOrder.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallVideoPayload.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\HashtagHints.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\InlineQueriesManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\InputDialogId.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\InputGroupCallId.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\InputInvoice.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\InputMessageText.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\JsonValue.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\LanguagePackManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\LinkManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Location.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\logevent\LogEventHelper.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Logging.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageContent.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageContentType.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageDb.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageEntity.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageExtendedMedia.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageId.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageReaction.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageReplyHeader.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageReplyInfo.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageSearchFilter.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageSender.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessagesInfo.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessagesManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageThreadDb.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageTtl.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\misc.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\AuthDataShared.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\ConnectionCreator.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\DcAuthManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\DcOptionsSet.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\MtprotoHeader.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetActor.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQuery.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryCreator.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryDelayer.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryDispatcher.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryStats.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetStatsManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\Proxy.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\PublicRsaKeyShared.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\PublicRsaKeyWatchdog.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\Session.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\SessionProxy.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\net\SessionMultiProxy.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\NewPasswordState.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationSettingsScope.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationSettingsManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationSound.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationType.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\OptionManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\OrderInfo.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Payments.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\PasswordManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\PhoneNumberManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\PrivacyManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Photo.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\PhotoSize.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\PhotoSizeSource.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\PollManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Premium.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\PremiumGiftOption.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\QueryCombiner.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\QueryMerger.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\RecentDialogList.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ReplyMarkup.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ReportReason.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\RequestedDialogType.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\RestrictionReason.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ScopeNotificationSettings.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretChatActor.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretChatDb.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretChatsManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretInputMedia.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SecureManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SecureStorage.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SecureValue.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SendCodeHelper.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SentEmailCode.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SequenceDispatcher.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SpecialStickerSetType.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SponsoredMessageManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\StateManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerFormat.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerPhotoSize.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\StickersManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerType.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\StorageManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\SuggestedAction.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Support.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Td.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\TdDb.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\TermsOfService.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\ThemeManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\TopDialogCategory.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\TopDialogManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\TranscriptionInfo.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\TranslationManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\UpdatesManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Usernames.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\Venue.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\VideoNotesManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\VideosManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\VoiceNotesManager.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\WebPageBlock.cpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\telegram\WebPagesManager.cpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\AuthData.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\AuthKey.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\ConnectionManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\CryptoStorer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\DhCallback.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\DhHandshake.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\Handshake.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\HandshakeActor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\HandshakeConnection.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\HttpTransport.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\IStreamTransport.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\KDF.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\MtprotoQuery.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\NoCryptoStorer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\PacketInfo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\PacketStorer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\Ping.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\PingConnection.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\ProxySecret.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\RawConnection.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\RSA.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\SessionConnection.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\TcpTransport.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\TlsInit.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\TlsReaderByteFlow.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\Transport.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\TransportType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\mtproto\utils.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AccessRights.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Account.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AffectedHistory.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AnimationsManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Application.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AttachMenuManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AudiosManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AuthManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AutoDownloadSettings.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AutosaveManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\BackgroundId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\BackgroundManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\BackgroundType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\BotCommand.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\BotCommandScope.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\CallActor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\CallDiscardReason.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\CallId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\CallManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\CallbackQueriesManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ChainId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ChannelId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ChannelParticipantFilter.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ChannelType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ChatId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ChatReactions.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ClientActor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ConfigManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ConnectionState.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Contact.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ContactsManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\CountryInfoManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\CustomEmojiId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DelayDispatcher.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Dependencies.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DeviceTokenManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DhCache.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DhConfig.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogAction.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogActionBar.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogAdministrator.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogDate.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogDb.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogEventLog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogFilter.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogFilterId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogInviteLink.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogListId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogLocation.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogNotificationSettings.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogParticipant.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogParticipantFilter.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogSource.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Dimensions.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Document.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DocumentsManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DownloadManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DownloadManagerCallback.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DraftMessage.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\EmailVerification.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\EmojiGroup.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\EmojiGroupType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\EmojiStatus.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\EncryptedFile.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\FileReferenceManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileBitmask.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileData.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileDb.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileDbId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileDownloader.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileEncryptionKey.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileFromBytes.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileGcParameters.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileGcWorker.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileGenerateManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileHashUploader.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLoaderActor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLoader.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLoaderUtils.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLoadManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLocation.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileSourceId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileStats.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileStatsWorker.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileUploader.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\PartsManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\ResourceManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\ResourceState.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\FolderId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopic.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicEditedData.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicIcon.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicInfo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\FullMessageId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Game.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\GameManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\GitCommitHash.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Global.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallParticipant.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallParticipantOrder.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\GroupCallVideoPayload.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\HashtagHints.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\InlineQueriesManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\InputDialogId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\InputGroupCallId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\InputInvoice.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\InputMessageText.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\JsonValue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\LabeledPricePart.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\LanguagePackManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\LinkManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Location.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\logevent\LogEvent.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\logevent\LogEventHelper.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\logevent\SecretChatEvent.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Logging.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageContent.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageContentType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageCopyOptions.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageDb.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageEntity.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageExtendedMedia.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageLinkInfo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageReaction.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageReplyHeader.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageReplyInfo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageSearchFilter.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageSender.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessagesInfo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessagesManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageThreadDb.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageThreadInfo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageTtl.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MinChannel.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\misc.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\AuthDataShared.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\ConnectionCreator.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\DcAuthManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\DcId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\DcOptions.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\DcOptionsSet.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\MtprotoHeader.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetActor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQuery.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryCounter.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryCreator.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryDelayer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryDispatcher.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetQueryStats.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetStatsManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\NetType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\Proxy.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\PublicRsaKeyShared.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\PublicRsaKeyWatchdog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\Session.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\SessionProxy.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\SessionMultiProxy.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\net\TempAuthKeyWatchdog.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NewPasswordState.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Notification.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationGroupId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationGroupKey.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationGroupType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationSettingsScope.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationSettingsManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationSound.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationSoundType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\NotificationType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\OptionManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\OrderInfo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PasswordManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Payments.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PhoneNumberManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Photo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PhotoFormat.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PhotoSize.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PhotoSizeSource.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PollId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PollManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Premium.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PremiumGiftOption.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PrivacyManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PtsManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PublicDialogType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\QueryCombiner.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\QueryMerger.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\RecentDialogList.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ReplyMarkup.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ReportReason.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\RequestActor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\RequestedDialogType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\RestrictionReason.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ScheduledServerMessageId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ScopeNotificationSettings.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretChatActor.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretChatId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretChatDb.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretChatLayer.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretChatsManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecretInputMedia.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecureManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecureStorage.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecureValue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SendCodeHelper.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SentEmailCode.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SequenceDispatcher.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ServerMessageId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SetWithPosition.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SpecialStickerSetType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SponsoredMessageManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StateManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerFormat.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerPhotoSize.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerSetId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StickersManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerType.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StorageManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SuggestedAction.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Support.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Td.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TdCallback.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TdDb.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TdParameters.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TermsOfService.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ThemeManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TopDialogCategory.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TopDialogManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TranscriptionInfo.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TranslationManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\UniqueId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\UpdatesManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\UserId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Usernames.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Venue.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Version.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\VideoNotesManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\VideosManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\VoiceNotesManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\WebPageBlock.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\WebPageId.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\WebPagesManager.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AnimationsManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AudiosManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\AuthManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\BackgroundType.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogNotificationSettings.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DialogFilter.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Dimensions.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Document.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DocumentsManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\DraftMessage.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\EmojiGroup.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\FileReferenceManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileData.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileId.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileLocation.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\files\FileSourceId.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopic.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicEditedData.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicIcon.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ForumTopicInfo.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Game.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\InputInvoice.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\InputMessageText.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageEntity.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageExtendedMedia.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageReaction.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MessageReplyInfo.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\MinChannel.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\OrderInfo.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\Photo.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PhotoSize.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PhotoSizeSource.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PollId.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PollManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\PremiumGiftOption.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ReplyMarkup.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\RequestedDialogType.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\ScopeNotificationSettings.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SecureValue.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\SendCodeHelper.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerPhotoSize.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StickerSetId.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\StickersManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\TranscriptionInfo.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\VideoNotesManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\VideosManager.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\telegram\VoiceNotesManager.hpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\mtproto\mtproto_api.cpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\mtproto\mtproto_api.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\mtproto\mtproto_api.hpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\telegram\telegram_api.cpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\telegram\telegram_api.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\telegram\telegram_api.hpp" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\telegram\secret_api.cpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\telegram\secret_api.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\generate\auto\td\telegram\secret_api.hpp" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\tl\TlObject.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\tl\tl_object_parse.h" />
+    <ClInclude Include="D:\work\Project_telegram_cloud\td\td\tl\tl_object_store.h" />
+    <ClCompile Include="D:\work\Project_telegram_cloud\td\example\csharp\build\td\telegram\GitCommitHash.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\ZERO_CHECK.vcxproj">
+      <Project>{E9FAFC1C-602C-35E8-A000-F2ED42802021}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\remove_cpp_documentation.vcxproj">
+      <Project>{1E25F53C-CC4A-3EBB-800D-8CCC5BFEE385}</Project>
+      <Name>remove_cpp_documentation</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\tdactor\tdactor.vcxproj">
+      <Project>{B1D2A801-9E77-33FB-ACE9-164AD6B1C35F}</Project>
+      <Name>tdactor</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\tdapi.vcxproj">
+      <Project>{8EA0B7DF-45E1-3195-B742-87F6FE516D2A}</Project>
+      <Name>tdapi</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\tddb\tddb.vcxproj">
+      <Project>{8B5FB62A-5DAA-32D5-86FD-A1C45CDF6CDF}</Project>
+      <Name>tddb</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\tdnet\tdnet.vcxproj">
+      <Project>{B398344D-E385-34E7-8937-23FB974FED58}</Project>
+      <Name>tdnet</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\sqlite\tdsqlite.vcxproj">
+      <Project>{817E80EC-1F51-34A6-B5FD-28199CA3BC79}</Project>
+      <Name>tdsqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\tdutils\tdutils.vcxproj">
+      <Project>{A82D9AAA-6B25-3A03-84C5-035ABF8FFD7C}</Project>
+      <Name>tdutils</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\Project_telegram_cloud\td\example\csharp\build\td\generate\tl_generate_common.vcxproj">
+      <Project>{4566BCAD-1A2A-3F6B-BCB5-2C41C75CDDA0}</Project>
+      <Name>tl_generate_common</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
