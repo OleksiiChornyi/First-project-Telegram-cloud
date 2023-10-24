@@ -28,17 +28,17 @@ namespace Telegram_cloud
         }
         private static void Add_directoryes(string name_drive, long id_drive)
         {
-            if (!TdCloud.all_paths_to_directiryes.ContainsKey(id_drive))
+            if (!TdCloud.all_paths_to_directiryes_without_files.ContainsKey(id_drive))
                 return;
             var i = 0;
-            foreach (string path in TdCloud.all_paths_to_directiryes[id_drive])
+            foreach (string path in TdCloud.all_paths_to_directiryes_without_files[id_drive])
             {
                 GoUp();
                 tree = tree.Go_children(name_drive);
                 foreach (var item in path.Split('\\'))
                 {
-                    if (item != "" && i < TdCloud.all_messages_directiryes_id[id_drive].Count)
-                        tree = TreeNode.Go_or_create_child(tree, item, Formats.Directory, TdCloud.all_messages_directiryes_id[id_drive][i]);
+                    if (item != "" && i < TdCloud.all_messages_directiryes_without_files_id[id_drive].Count)
+                        tree = TreeNode.Go_or_create_child(tree, item, Formats.Directory, TdCloud.all_messages_directiryes_without_files_id[id_drive][i]);
                 }
                 i++;
             }
@@ -60,8 +60,8 @@ namespace Telegram_cloud
                             tree = TreeNode.Go_or_create_child(tree, item, Formats.Directory, 0);
                         }
                     }
-                    if (i < TdCloud.all_messages_doc_id[id_drive].Count)
-                        tree = TreeNode.Go_or_create_child(tree, Path.GetFileName(TdCloud.all_paths_to_files_with_name[id_drive][i]), Formats.File, TdCloud.all_messages_doc_id[id_drive][i]);
+                    if (i < TdCloud.all_messages_files_id[id_drive].Count)
+                        tree = TreeNode.Go_or_create_child(tree, Path.GetFileName(TdCloud.all_paths_to_files_with_name[id_drive][i]), Formats.File, TdCloud.all_messages_files_id[id_drive][i]);
                 }
             }
             catch { }
@@ -120,14 +120,11 @@ namespace Telegram_cloud
             }
             try
             {
-                SaveStringArrayToJson(TdCloud.all_paths[id_drive], name + "\\all_paths.json");
-                SaveStringArrayToJson(TdCloud.all_paths_to_directiryes[id_drive], name + "\\all_paths_to_directiryes.json");
-                SaveStringArrayToJson(TdCloud.all_paths_to_files_with_name[id_drive], name + "\\all_paths_to_files_with_name.json");
-                SaveStringArrayToJson(TdCloud.all_images_paths[id_drive], name + "\\all_images_paths.json");
-                SaveLongArrayToJson(TdCloud.all_messages_doc_id[id_drive], name + "\\all_messages_doc_id.json");
-                SaveLongArrayToJson(TdCloud.all_messages_images_id[id_drive], name + "\\all_images_id.json");
-                SaveLongArrayToJson(TdCloud.all_messages_directiryes_id[id_drive], name + "\\all_messages_directiryes_id.json");
                 SaveLongArrayToJson(TdCloud.all_messages_id[id_drive], name + "\\all_messages_id.json");
+                SaveStringArrayToJson(TdCloud.all_paths_to_directiryes_without_files[id_drive], name + "\\all_paths_to_directiryes_without_files.json");
+                SaveLongArrayToJson(TdCloud.all_messages_directiryes_without_files_id[id_drive], name + "\\all_messages_directiryes_without_files_id.json");
+                SaveStringArrayToJson(TdCloud.all_paths_to_files_with_name[id_drive], name + "\\all_paths_to_files_with_name.json");
+                SaveLongArrayToJson(TdCloud.all_messages_files_id[id_drive], name + "\\all_messages_files_id.json");
             }
             catch { }
         }
@@ -197,14 +194,11 @@ namespace Telegram_cloud
                     var list_name_child = tree.Get_list_name_childrens();
                     if (!list_name_child.Contains(item.Value))
                     {
-                        OpenJsonToStringArray(TdCloud.all_paths, item.Key, item.Value + "\\all_paths.json");
-                        OpenJsonToStringArray(TdCloud.all_paths_to_directiryes, item.Key, item.Value + "\\all_paths_to_directiryes.json");
-                        OpenJsonToStringArray(TdCloud.all_paths_to_files_with_name, item.Key, item.Value + "\\all_paths_to_files_with_name.json");
-                        OpenJsonToStringArray(TdCloud.all_images_paths, item.Key, item.Value + "\\all_images_paths.json");
-                        OpenJsonToLongArray(TdCloud.all_messages_doc_id, item.Key, item.Value + "\\all_messages_doc_id.json");
-                        OpenJsonToLongArray(TdCloud.all_messages_images_id, item.Key, item.Value + "\\all_images_id.json");
-                        OpenJsonToLongArray(TdCloud.all_messages_directiryes_id, item.Key, item.Value + "\\all_messages_directiryes_id.json");
                         OpenJsonToLongArray(TdCloud.all_messages_id, item.Key, item.Value + "\\all_messages_id.json");
+                        OpenJsonToStringArray(TdCloud.all_paths_to_directiryes_without_files, item.Key, item.Value + "\\all_paths_to_directiryes_without_files.json");
+                        OpenJsonToLongArray(TdCloud.all_messages_directiryes_without_files_id, item.Key, item.Value + "\\all_messages_directiryes_without_files_id.json");
+                        OpenJsonToStringArray(TdCloud.all_paths_to_files_with_name, item.Key, item.Value + "\\all_paths_to_files_with_name.json");
+                        OpenJsonToLongArray(TdCloud.all_messages_files_id, item.Key, item.Value + "\\all_messages_files_id.json");
                     }
                 }
             }
@@ -329,7 +323,7 @@ namespace Telegram_cloud
         }
         public static string Get_path()
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return "";
             string res = tree.Get_path().TrimEnd('\\');
             int index = res.IndexOf(NameDrive);
@@ -350,7 +344,7 @@ namespace Telegram_cloud
         }
         public static List<string> Get_all_childrens_path(string name)
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             List<string> all_childrens_path = new List<string>();
             TreeNode.Get_all_childrens_path(tree.Go_children(name), "", all_childrens_path);
@@ -358,7 +352,7 @@ namespace Telegram_cloud
         }
         public static List<string> Get_all_paths()
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             List<string> all_childrens_path = new List<string>();
             var node = TreeNode.GoUp(tree);
@@ -368,7 +362,7 @@ namespace Telegram_cloud
         }
         public static List<long> Get_all_files_ids()
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             List<long> all_childrens_path = new List<long>();
             var node = TreeNode.GoUp(tree);
@@ -378,7 +372,7 @@ namespace Telegram_cloud
         }
         public static List<string> Get_all_children_paths()
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             List<string> all_childrens_path = new List<string>();
             var node = tree;
@@ -387,7 +381,7 @@ namespace Telegram_cloud
         }
         public static List<long> Get_all_children_files_ids()
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             List<long> all_childrens_path = new List<long>();
             var node = tree;
@@ -396,7 +390,7 @@ namespace Telegram_cloud
         }
         public static string Get_full_path_by_name_children(string name)
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             var node = tree;
             var res = node.Go_children(name).Get_path();
@@ -410,7 +404,7 @@ namespace Telegram_cloud
         }
         public static List<long> Get_all_childdrens_id(string name)
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             List<long> all_childrens_id = new List<long>();
             TreeNode.Get_all_childrens_id(tree.Go_children(name), all_childrens_id);
@@ -418,7 +412,7 @@ namespace Telegram_cloud
         }
         public static List<long> Get_all_childrens_directoryes_id(string name)
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             if (name.Contains("\\"))
                 name = Path.GetFileName(name);
@@ -428,7 +422,7 @@ namespace Telegram_cloud
         }
         public static string Get_full_path_by_id(long id)
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             TreeNode node = TreeNode.GoUp(tree);
             node = node.Go_children(NameDrive);
@@ -456,6 +450,8 @@ namespace Telegram_cloud
         }
         public static long Get_childdren_id_by_full_path(string path, string name)
         {
+            if (tree == null || NameDrive == null)
+                return 0;
             name = Path.GetFileName(name);
             TreeNode node = TreeNode.GoUp(tree);
             node = node.Go_children(NameDrive);
@@ -467,7 +463,7 @@ namespace Telegram_cloud
         }
         public static Dictionary<long, string> Get_all_childdrens_id_with_path(string name)
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
             if (name.Contains("\\"))
                 name = Path.GetFileName(name);
@@ -480,7 +476,7 @@ namespace Telegram_cloud
         }
         public static List<long> Get_all_current_directory_childdrens_images_index()
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
 
             Dictionary<string, Formats> childrens = tree.Get_childrens();
@@ -491,9 +487,9 @@ namespace Telegram_cloud
                 if (child.Value == Formats.File)
                 {
                     var path = Get_full_path_by_name_children(child.Key).TrimEnd('\\');
-                    if (TdCloud.images_formats.Any(path.EndsWith) && TdCloud.all_images_paths[IdDrive].Contains(path))
+                    if (TdCloud.images_formats.Any(path.EndsWith) && TdCloud.all_paths_to_files_with_name[IdDrive].Contains(path))
                     {
-                        result.Add(TdCloud.all_images_paths[IdDrive].IndexOf(path));
+                        result.Add(TdCloud.all_paths_to_files_with_name[IdDrive].IndexOf(path));
                     }
                 }
             }
@@ -502,7 +498,7 @@ namespace Telegram_cloud
         }
         public static List<long> Get_all_current_directory_childdrens_videos_index()
         {
-            if (tree == null)
+            if (tree == null || NameDrive == null)
                 return null;
 
             Dictionary<string, Formats> childrens = tree.Get_childrens();
@@ -513,9 +509,9 @@ namespace Telegram_cloud
                 if (child.Value == Formats.File)
                 {
                     var path = Get_full_path_by_name_children(child.Key).TrimEnd('\\');
-                    if (TdCloud.videos_formats.Any(path.EndsWith) || TdCloud.all_images_paths[IdDrive].Contains(path))
+                    if (TdCloud.videos_formats.Any(path.EndsWith) || TdCloud.all_paths_to_files_with_name[IdDrive].Contains(path))
                     {
-                        result.Add(TdCloud.all_images_paths[IdDrive].IndexOf(path));
+                        result.Add(TdCloud.all_paths_to_files_with_name[IdDrive].IndexOf(path));
                     }
                 }
             }
@@ -524,6 +520,8 @@ namespace Telegram_cloud
         }
         public static string Get_name_children_by_id(long id)
         {
+            if (tree == null || NameDrive == null)
+                return "";
             var name = new List<string>();
             //var node = tree;
             /*var node = TreeNode.GoUp(tree);
@@ -537,6 +535,8 @@ namespace Telegram_cloud
         }*/
         public static void GoUp()
         {
+            if (tree == null || NameDrive == null)
+                return;
             tree = TreeNode.GoUp(tree);
         }
     }

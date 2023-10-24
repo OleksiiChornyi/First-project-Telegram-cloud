@@ -44,6 +44,25 @@ namespace Telegram_cloud
                 TdCloud._isResultReceived = true;
             }
         }
+        public class EditMessageHandler : Td.ClientResultHandler
+        {
+            void Td.ClientResultHandler.OnResult(TdApi.BaseObject @object)
+            {
+                if (@object.GetType() != typeof(Telegram.Td.Api.Message))
+                {
+                    TdCloud._isResultReceived = true;
+                    return;
+                }
+                try
+                {
+                }
+                catch
+                {
+                    //TdCloud._isResultReceived = true;
+                }
+                TdCloud._isResultReceived = true;
+            }
+        }
         public class MessageBoxHandler : Td.ClientResultHandler
         {
             void Td.ClientResultHandler.OnResult(TdApi.BaseObject @object)
@@ -103,66 +122,103 @@ namespace Telegram_cloud
                     }
                     if ((((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).GetType() == typeof(Telegram.Td.Api.MessageDocument))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName));
-                        if ((TdCloud.images_formats.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName.Contains) ||
-                            TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName.Contains) ||
-                            TdCloud.gif_format.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName.Contains)))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.is_updated = true;
 
                     }
                     else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessagePhoto))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         double timestamp = ((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Date;
                         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                         DateTime dateTime = origin.AddSeconds(timestamp).ToLocalTime();
                         string file_name = "photo_" + dateTime.ToString("yyyy-MM-dd_HH-mm-ss") + ((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id + ".jpg";
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, file_name));
-                        if (TdCloud.images_formats.Any(file_name.Contains) || TdCloud.videos_formats.Any(file_name.Contains) || TdCloud.gif_format.Any(file_name.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, file_name));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.is_updated = true;
                     }
                     else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessageVideo))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName));
-                        if (TdCloud.images_formats.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName.Contains) || TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName.Contains) || TdCloud.gif_format.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.is_updated = true;
                     }
                     else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessageAnimation))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Animation.FileName));
-                        if (TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Animation.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Animation.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.is_updated = true;
                     }
                     else if ((((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).GetType() == typeof(Telegram.Td.Api.MessageText))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Text.Text);
-                        TdCloud.all_paths_to_directiryes[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Text.Text);
-                        TdCloud.all_messages_directiryes_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.all_paths_to_directiryes_without_files[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Text.Text);
+                        TdCloud.all_messages_directiryes_without_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.is_updated = true;
+                    }
+                }
+                catch
+                {
+                    TdCloud.result = "";
+                }
+                TdCloud._isResultReceived = true;
+            }
+        }
+        public class EditUpdateMessageHandler : Td.ClientResultHandler
+        {
+            void Td.ClientResultHandler.OnResult(TdApi.BaseObject @object)
+            {
+                if (@object.GetType() != typeof(Telegram.Td.Api.FoundChatMessages))
+                {
+                    TdCloud._isResultReceived = true;
+                    return;
+                }
+                try
+                {
+                    if (TdCloud.all_messages_id[TdCloud.current_chat_id].Contains(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id))
+                    {
+                        TdCloud._isResultReceived = true;
+                        return;
+                    }
+                    if ((((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).GetType() == typeof(Telegram.Td.Api.MessageDocument))
+                    {
+                        TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName));
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.is_updated = true;
+
+                    }
+                    else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessagePhoto))
+                    {
+                        double timestamp = ((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Date;
+                        DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                        DateTime dateTime = origin.AddSeconds(timestamp).ToLocalTime();
+                        string file_name = "photo_" + dateTime.ToString("yyyy-MM-dd_HH-mm-ss") + ((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id + ".jpg";
+                        TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, file_name));
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                    }
+                    else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessageVideo))
+                    {
+                        TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName));
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                    }
+                    else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessageAnimation))
+                    {
+                        TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Animation.FileName));
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.is_updated = true;
+                    }
+                    else if ((((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).GetType() == typeof(Telegram.Td.Api.MessageText))
+                    {
+                        TdCloud.all_paths_to_directiryes_without_files[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Text.Text);
+                        TdCloud.all_messages_directiryes_without_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.is_updated = true;
                     }
@@ -192,66 +248,39 @@ namespace Telegram_cloud
                     }
                     if ((((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).GetType() == typeof(Telegram.Td.Api.MessageDocument))
                     {
-                        TdCloud.all_paths[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.to_chat_id_message_move].Add(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName));
-                        if ((TdCloud.images_formats.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName.Contains) ||
-                            TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName.Contains) ||
-                            TdCloud.gif_format.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName.Contains)))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
-                            TdCloud.all_images_paths[TdCloud.to_chat_id_message_move].Add(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Document.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.is_updated = true;
 
                     }
                     else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessagePhoto))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         double timestamp = ((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Date;
                         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                         DateTime dateTime = origin.AddSeconds(timestamp).ToLocalTime();
                         string file_name = "photo_" + dateTime.ToString("yyyy-MM-dd_HH-mm-ss") + ((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id + ".jpg";
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, file_name));
-                        if (TdCloud.images_formats.Any(file_name.Contains) || TdCloud.videos_formats.Any(file_name.Contains) || TdCloud.gif_format.Any(file_name.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, file_name));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                     }
                     else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessageVideo))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName));
-                        if (TdCloud.images_formats.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName.Contains) || TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName.Contains) || TdCloud.gif_format.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Video.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                     }
                     else if (((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content.GetType() == typeof(Telegram.Td.Api.MessageAnimation))
                     {
-                        TdCloud.all_paths[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.to_chat_id_message_move].Add(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Animation.FileName));
-                        if (TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Animation.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
-                            TdCloud.all_images_paths[TdCloud.to_chat_id_message_move].Add(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Animation.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.is_updated = true;
                     }
                     else if ((((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).GetType() == typeof(Telegram.Td.Api.MessageText))
                     {
-                        TdCloud.all_paths[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Text.Text);
-                        TdCloud.all_paths_to_directiryes[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Text.Text);
-                        TdCloud.all_messages_directiryes_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
+                        TdCloud.all_paths_to_directiryes_without_files[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Content).Text.Text);
+                        TdCloud.all_messages_directiryes_without_files_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.all_messages_id[TdCloud.to_chat_id_message_move].Add(((Telegram.Td.Api.FoundChatMessages)(@object)).Messages[0].Id);
                         TdCloud.is_updated = true;
                     }
@@ -296,63 +325,36 @@ namespace Telegram_cloud
                 {
                     if (((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content.GetType() == typeof(Telegram.Td.Api.MessageDocument) && ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Document.DocumentValue.Remote.IsUploadingCompleted)
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
-                        TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Document.FileName));
-                        if (TdCloud.images_formats.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Document.FileName.Contains) || 
-                            TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Document.FileName.Contains) || 
-                            TdCloud.gif_format.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Document.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Document.FileName));
-                        }
+                       TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Document.FileName));
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                     }
                     else if (((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content.GetType() == typeof(Telegram.Td.Api.MessagePhoto) && ((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Photo.Sizes[0].Photo.Remote.IsUploadingCompleted)
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                         double timestamp = ((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Date;
                         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                         DateTime dateTime = origin.AddSeconds(timestamp).ToLocalTime();
                         string file_name = "photo_" + dateTime.ToString("yyyy-MM-dd_HH-mm-ss") + ((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id + ".jpg";
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, file_name));
-                        if (TdCloud.images_formats.Any(file_name.Contains) || TdCloud.videos_formats.Any(file_name.Contains) || TdCloud.gif_format.Any(file_name.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, file_name));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                     }
                     else if (((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content.GetType() == typeof(Telegram.Td.Api.MessageVideo) && ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Video.VideoValue.Remote.IsUploadingCompleted)
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Video.FileName));
-                        if (TdCloud.images_formats.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Video.FileName.Contains) || TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Video.FileName.Contains) || TdCloud.gif_format.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Video.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Video.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                     }
                     else if (((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content.GetType() == typeof(Telegram.Td.Api.MessageAnimation) && ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Animation.AnimationValue.Remote.IsUploadingCompleted)
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Animation.FileName));
-                        if (TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Animation.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Add(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Animation.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                     }
                     else if (((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content.GetType() == typeof(Telegram.Td.Api.MessageText))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Text.Text);
-                        TdCloud.all_paths_to_directiryes[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Text.Text);
-                        TdCloud.all_messages_directiryes_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
+                        TdCloud.all_paths_to_directiryes_without_files[TdCloud.current_chat_id].Add(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Content).Text.Text);
+                        TdCloud.all_messages_directiryes_without_files_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                         TdCloud.all_messages_id[TdCloud.current_chat_id].Add(((Telegram.Td.Api.Messages)(@object)).MessagesValue[0].Id);
                     }
                     else
@@ -427,64 +429,34 @@ namespace Telegram_cloud
                 {
                     if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessageDocument))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Remove(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.FileName));
-                        if (TdCloud.images_formats.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.FileName.Contains) ||
-                            TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.FileName.Contains) ||
-                            TdCloud.gif_format.Any(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Remove(Path.Combine(((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text, ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.FileName));
-                        }
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                     }
                     else if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessagePhoto))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                         double timestamp = ((Telegram.Td.Api.Message)(@object)).Date;
                         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                         DateTime dateTime = origin.AddSeconds(timestamp).ToLocalTime();
                         string file_name = "photo_" + dateTime.ToString("yyyy-MM-dd_HH-mm-ss") + ((Telegram.Td.Api.Message)(@object)).Id + ".jpg";
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Remove(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text, file_name));
-                        if (TdCloud.images_formats.Any(file_name.Contains) || TdCloud.videos_formats.Any(file_name.Contains) || TdCloud.gif_format.Any(file_name.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Remove(Path.Combine(((Telegram.Td.Api.MessagePhoto)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text, file_name));
-                        }
-                        TdCloud.all_messages_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                     }
                     else if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessageVideo))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Remove(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.FileName));
-                        if (TdCloud.images_formats.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.FileName.Contains) || TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.FileName.Contains) || TdCloud.gif_format.Any(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Remove(Path.Combine(((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text, ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.FileName));
-                        }
-                        TdCloud.all_messages_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                     }
                     else if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessageAnimation))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text);
-                        TdCloud.all_messages_doc_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                         TdCloud.all_paths_to_files_with_name[TdCloud.current_chat_id].Remove(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Message)(@object)).Content).Animation.FileName));
-                        if (TdCloud.videos_formats.Any(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Message)(@object)).Content).Animation.FileName.Contains))
-                        {
-                            TdCloud.all_messages_images_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
-                            TdCloud.all_images_paths[TdCloud.current_chat_id].Remove(Path.Combine(((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Message)(@object)).Content).Caption.Text, ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Message)(@object)).Content).Animation.FileName));
-                        }
-                        TdCloud.all_messages_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
+                        TdCloud.all_messages_files_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                     }
                     else if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessageText))
                     {
-                        TdCloud.all_paths[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.Message)(@object)).Content).Text.Text);
-                        TdCloud.all_paths_to_directiryes[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.Message)(@object)).Content).Text.Text);
-                        TdCloud.all_messages_directiryes_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
+                        TdCloud.all_paths_to_directiryes_without_files[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.MessageText)((Telegram.Td.Api.Message)(@object)).Content).Text.Text);
+                        TdCloud.all_messages_directiryes_without_files_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                     }
-                    TdCloud.all_messages_id.Remove(((Telegram.Td.Api.Message)(@object)).Id);
+                    TdCloud.all_messages_id[TdCloud.current_chat_id].Remove(((Telegram.Td.Api.Message)(@object)).Id);
                 }
                 catch
                 {
@@ -591,6 +563,41 @@ namespace Telegram_cloud
                     {
                         TdCloud.doc_id = ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.DocumentValue.Id;
                         TdCloud.file_name = ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.FileName;
+                        TdCloud._isResultReceived = true;
+                    }
+                }
+                catch { }
+            }
+        }
+        public class GetRemoteFileIDHandler : Td.ClientResultHandler
+        {
+            void Td.ClientResultHandler.OnResult(TdApi.BaseObject @object)
+            {
+                if (@object.GetType() != typeof(Telegram.Td.Api.Message))
+                {
+                    TdCloud._isResultReceived = true;
+                    return;
+                }
+                try
+                {
+                    if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessagePhoto))
+                    {
+                        TdCloud._isResultReceived = true;
+                    }
+                    if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessageVideo))
+                    {
+                        TdCloud.remoteDocId = ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.VideoValue.Remote.Id;
+                        TdCloud.file_name = ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.FileName;
+                        TdCloud._isResultReceived = true;
+                    }
+                    else if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessageAnimation))
+                    {
+                        TdCloud.remoteDocId = ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Message)(@object)).Content).Animation.AnimationValue.Remote.Id;
+                        TdCloud._isResultReceived = true;
+                    }
+                    else
+                    {
+                        TdCloud.remoteDocId = ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.DocumentValue.Remote.Id;
                         TdCloud._isResultReceived = true;
                     }
                 }

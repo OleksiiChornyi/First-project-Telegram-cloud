@@ -14,6 +14,7 @@ using System.Windows.Controls;
 using FFMpegCore;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using System.Reflection;
 
 namespace Telegram_cloud
 {
@@ -29,14 +30,14 @@ namespace Telegram_cloud
         public static List<string> images_formats = new List<string> { ".bmp", ".jpg", ".jpeg", ".png", ".tiff", ".exif", ".BMP", ".JPG", ".JPEG", ".PNG", ".TIFF", ".EXIF"};
         public static List<string> videos_formats = new List<string> { ".mp4", ".mov", ".wmv", ".avi", ".mkv", ".flv", ".MP4", ".MOV", ".WMV", ".AVI", ".MKV", ".FLV" };
         public static long chat_id;
-        public static Dictionary<long, List<string>> all_paths = new Dictionary<long, List<string>>();
+        //public static Dictionary<long, List<string>> all_paths = new Dictionary<long, List<string>>();
         public static Dictionary<long, List<long>> all_messages_id = new Dictionary<long, List<long>>();
-        public static Dictionary<long, List<long>> all_messages_doc_id = new Dictionary<long, List<long>>();
-        public static Dictionary<long, List<long>> all_messages_images_id = new Dictionary<long, List<long>>();
-        public static Dictionary<long, List<string>> all_images_paths = new Dictionary<long, List<string>>();
-        public static Dictionary<long, List<string>> all_paths_to_directiryes = new Dictionary<long, List<string>>();
-        public static Dictionary<long, List<long>> all_messages_directiryes_id = new Dictionary<long, List<long>>();
+        //public static Dictionary<long, List<long>> all_messages_doc_id = new Dictionary<long, List<long>>();
+        //public static Dictionary<long, List<string>> all_images_paths = new Dictionary<long, List<string>>();
+        public static Dictionary<long, List<string>> all_paths_to_directiryes_without_files = new Dictionary<long, List<string>>();
+        public static Dictionary<long, List<long>> all_messages_directiryes_without_files_id = new Dictionary<long, List<long>>();
         public static Dictionary<long, List<string>> all_paths_to_files_with_name = new Dictionary<long, List<string>>();
+        public static Dictionary<long, List<long>> all_messages_files_id = new Dictionary<long, List<long>>();
         public static string path = "";
 
         public static string result = "No empty";
@@ -52,6 +53,8 @@ namespace Telegram_cloud
         private readonly static Td.ClientResultHandler _count_messageHandler = new Handlers.CountMessagesHandler();
         private readonly static Td.ClientResultHandler _send_messageHandler = new Handlers.SendMessageHandler();
         private readonly static Td.ClientResultHandler _send_update_messageHandler = new Handlers.SendUpdateMessageHandler();
+        private readonly static Td.ClientResultHandler _edit_messageHandler = new Handlers.EditMessageHandler();
+        private readonly static Td.ClientResultHandler _send_edit_messageHandler = new Handlers.EditUpdateMessageHandler();
         private readonly static Td.ClientResultHandler _send_update_move_messageHandler = new Handlers.SendUpdateMoveMessageHandler();
         public static long to_chat_id_message_move;
 
@@ -72,6 +75,8 @@ namespace Telegram_cloud
         public static string file_name = "";
         public static bool can_download = true;
         public static bool is_file_open = true;
+        private readonly static Td.ClientResultHandler _getRemoteFileIdHandler = new Handlers.GetRemoteFileIDHandler();
+        public static string remoteDocId = "";
         //Properties Handler
         private readonly static Td.ClientResultHandler _properties_messageHandler = new Handlers.PropertiesHandler();
         public static string properties_message_name;
@@ -489,13 +494,16 @@ namespace Telegram_cloud
         }
         public static void Search_all_files(ProgressBar Progress_bar, ProgressBar Progress_bar_add, long id)
         {
-            all_paths[id] = new List<string>();
-            all_messages_doc_id[id] = new List<long>();
-            all_messages_images_id[id] = new List<long>();
-            all_images_paths[id] = new List<string>();
-            all_paths_to_directiryes[id] = new List<string>();
-            all_messages_directiryes_id[id] = new List<long>();
+            //all_paths[id] = new List<string>();
+            //all_messages_doc_id[id] = new List<long>();
+            //all_images_paths[id] = new List<string>();
+            //all_paths_to_directiryes[id] = new List<string>();
+            //all_messages_directiryes_id[id] = new List<long>();
+            all_messages_id[id] = new List<long>();
+            all_paths_to_directiryes_without_files[id] = new List<string>();
+            all_messages_directiryes_without_files_id[id] = new List<long>();
             all_paths_to_files_with_name[id] = new List<string>();
+            all_messages_files_id[id] = new List<long>();
             current_chat_id = id;
             if (Progress_bar != null)
             {
@@ -576,6 +584,47 @@ namespace Telegram_cloud
             }
             Console.WriteLine("2 OK");
         }
+        public static void Edit_message(long chatId, long messageId, string text_message)
+        {
+            /*_isResultReceived = false;
+            var funcGetMessage = new TdApi.GetMessage(chatId, messageId);
+            _client.Send(funcGetMessage, _getRemoteFileIdHandler);
+            while (!_isResultReceived)
+                Td.Client.Execute(funcGetMessage);
+
+            var file = new TdApi.InputFileRemote(remoteDocId);
+            var text = new TdApi.FormattedText(text_message, null);*/
+
+            //var func_send_file = new TdApi.InputMessageDocument(file, null, true, text); // true - выкл автоопределение (всё как файл), false - автоматическое определение, файл это или фото/видео
+            var func_send_file = new TdApi.FormattedText(text_message, null);
+            var funcEditMessage = new TdApi.EditMessageCaption(chatId, messageId, null, func_send_file);
+            _isResultReceived = false;
+            _client.Send(funcEditMessage, _edit_messageHandler);
+            while (!_isResultReceived)
+            {
+                Td.Client.Execute(funcEditMessage);
+            }
+            is_updated = false;
+            /*while (!is_updated)
+                Send_update_edit_message(chatId);*/
+        }
+        public static void Send_update_edit_message(long id)
+        {
+            current_chat_id = id;
+            string text_message = "";
+            //long count_cheke_update_this = all_messages_id.Count;
+            is_updated = false;
+
+            _isResultReceived = false;
+            var func_update_message = new TdApi.SearchChatMessages(id, text_message, null, 0, 0, 1, null, 0);
+            _client.Send(func_update_message, _send_edit_messageHandler);
+            Console.WriteLine("2");
+            while (!_isResultReceived)
+            {
+                Td.Client.Execute(func_update_message);
+            }
+            Console.WriteLine("2 OK");
+        }
         public static void Send_message(long id, string file_path, string text_message)
         {
             var file = new TdApi.InputFileLocal(file_path);
@@ -608,7 +657,7 @@ namespace Telegram_cloud
         }
         public static void Load_video(string file_path, string name_drive, long id_drive)
         {
-            if ((file_path.EndsWith(gif_format[0]) || file_path.EndsWith(gif_format[1])) && all_images_paths[id_drive].Count > 0)
+            /*if ((file_path.EndsWith(gif_format[0]) || file_path.EndsWith(gif_format[1])) && all_images_paths[id_drive].Count > 0)
             {
                 try
                 {
@@ -683,11 +732,11 @@ namespace Telegram_cloud
                         return;
                     MessageBox.Show("Error in loading preview video\n" + ex.ToString());
                 }
-            }
+            }*/
         }
         public static void Load_image(string file_path, string name_drive, long id_drive)
         {
-            if (images_formats.Any(file_path.EndsWith) && all_images_paths[id_drive].Count > 0)
+            /*if (images_formats.Any(file_path.EndsWith) && all_images_paths[id_drive].Count > 0)
             {
                 var index = all_images_paths[id_drive].Count - 1;
                 string[] substrings = all_images_paths[id_drive][index].Split('\\');
@@ -750,14 +799,13 @@ namespace Telegram_cloud
                     File.Delete(file_path);
                 }
                 catch { }
-            }
+            }*/
         }
         public static void Add_directory(long id, string name, string path)
         {
             var text = new TdApi.FormattedText(Path.Combine(path, name), null);
             var msg = new TdApi.InputMessageText(text, false, true);
             var func = new TdApi.SendMessage(id, 0, 0, null, null, msg);
-
 
             _isResultReceived = false;
 
@@ -766,8 +814,8 @@ namespace Telegram_cloud
             {
                 Td.Client.Execute(func);
             }
-            TdCloud.is_updated = false;
-            while (!TdCloud.is_updated)
+            is_updated = false;
+            while (!is_updated)
                 Send_update_message(id); //, path + name);
             /*_isResultReceived = false;
             _client.Send(func, _send_messageHandler);
@@ -800,7 +848,7 @@ namespace Telegram_cloud
         }
         public static void Load_preview_video(string file_path, int index)
         {
-            if ((file_path.EndsWith(gif_format[0]) || file_path.EndsWith(gif_format[1])) && all_images_paths[Struct_cloud.IdDrive].Count > 0)
+            /*if ((file_path.EndsWith(gif_format[0]) || file_path.EndsWith(gif_format[1])) && all_images_paths[Struct_cloud.IdDrive].Count > 0)
             {
                 try
                 {
@@ -885,11 +933,11 @@ namespace Telegram_cloud
                     File.Delete(file_path);
                 }
                 catch { }
-            }
+            }*/
         }
         public static void Load_preview_image(string file_path, int index)
         {
-            if (images_formats.Any(file_path.EndsWith) && all_images_paths[Struct_cloud.IdDrive].Count > 0)
+            /*if (images_formats.Any(file_path.EndsWith) && all_images_paths[Struct_cloud.IdDrive].Count > 0)
             {
                 string[] substrings = all_images_paths[Struct_cloud.IdDrive][index].Split('\\');
                 List<string> paths_to_images = new List<string>();
@@ -928,8 +976,8 @@ namespace Telegram_cloud
                         File.Delete(Path.Combine(Struct_cloud.NameDrive, all_images_paths[Struct_cloud.IdDrive][index]));
                     if (all_images_paths[Struct_cloud.IdDrive][index].EndsWith(images_formats[0]) || all_images_paths[Struct_cloud.IdDrive][index].EndsWith(images_formats[6]))
                         newImage.Save(Struct_cloud.NameDrive + "\\" + all_images_paths[Struct_cloud.IdDrive][index], ImageFormat.Bmp);
-                    /*else if (all_images_paths[index].EndsWith(images_formats[1]) || all_images_paths[index].EndsWith(images_formats[8]))
-                        newImage.Save(Struct_cloud.NameDrive + "\\" + all_images_paths[index], ImageFormat.Gif);*/
+                    *//*else if (all_images_paths[index].EndsWith(images_formats[1]) || all_images_paths[index].EndsWith(images_formats[8]))
+                        newImage.Save(Struct_cloud.NameDrive + "\\" + all_images_paths[index], ImageFormat.Gif);*//*
                     else if (all_images_paths[Struct_cloud.IdDrive][index].EndsWith(images_formats[1]) || all_images_paths[Struct_cloud.IdDrive][index].EndsWith(images_formats[2]) || all_images_paths[Struct_cloud.IdDrive][index].EndsWith(images_formats[7]) || all_images_paths[Struct_cloud.IdDrive][index].EndsWith(images_formats[8]))
                         newImage.Save(Struct_cloud.NameDrive + "\\" + all_images_paths[Struct_cloud.IdDrive][index], ImageFormat.Jpeg);
                     else if (all_images_paths[Struct_cloud.IdDrive][index].EndsWith(images_formats[3]) || all_images_paths[Struct_cloud.IdDrive][index].EndsWith(images_formats[9]))
@@ -955,7 +1003,7 @@ namespace Telegram_cloud
                     File.Delete(file_path);
                 }
                 catch { }
-            }
+            }*/
         }
         public static void Load_preview_images(long chatId, int index)
         {
@@ -964,7 +1012,7 @@ namespace Telegram_cloud
             while (path == "")
             {
                 _isResultReceived = false;
-                var func = new TdApi.GetMessage(chatId, all_messages_images_id[Struct_cloud.IdDrive][index]);
+                var func = new TdApi.GetMessage(chatId, all_messages_files_id[Struct_cloud.IdDrive][index]);
                 _client.Send(func, _getfileidHandler);
                 while (!_isResultReceived)
                     Td.Client.Execute(func);
@@ -984,7 +1032,7 @@ namespace Telegram_cloud
             while (path == "")
             {
                 _isResultReceived = false;
-                var func = new TdApi.GetMessage(chatId, all_messages_images_id[Struct_cloud.IdDrive][index]);
+                var func = new TdApi.GetMessage(chatId, all_messages_files_id[Struct_cloud.IdDrive][index]);
                 _client.Send(func, _getfileidHandler);
                 while (!_isResultReceived)
                     Td.Client.Execute(func);
@@ -999,7 +1047,7 @@ namespace Telegram_cloud
         }
         public static void Load_preview_one_video(string old_file_path, string path_id_drive)
         {
-            if ((old_file_path.EndsWith(gif_format[0]) || old_file_path.EndsWith(gif_format[1])) && all_images_paths[Struct_cloud.IdDrive].Count > 0)
+            /*if ((old_file_path.EndsWith(gif_format[0]) || old_file_path.EndsWith(gif_format[1])) && all_images_paths[Struct_cloud.IdDrive].Count > 0)
             {
                 try
                 {
@@ -1080,11 +1128,11 @@ namespace Telegram_cloud
                     File.Delete(old_file_path);
                 }
                 catch { }
-            }
+            }*/
         }
         public static void Load_preview_one_image(string old_file_path, string path_id_drive)
         {
-            if (images_formats.Any(path_id_drive.EndsWith) && all_images_paths[Struct_cloud.IdDrive].Count > 0)
+            /*if (images_formats.Any(path_id_drive.EndsWith) && all_images_paths[Struct_cloud.IdDrive].Count > 0)
             {
                 string[] substrings = path_id_drive.Split('\\');
                 List<string> paths_to_images = new List<string>();
@@ -1141,7 +1189,7 @@ namespace Telegram_cloud
                     File.Delete(old_file_path);
                 }
                 catch { }
-            }
+            }*/
         }
         public static void Load_one_preview(long chatId, long messageId, string new_file_path, string drive_path)
         {
@@ -1304,15 +1352,20 @@ namespace Telegram_cloud
         {
             try
             {
-                if (!all_paths.ContainsKey(to_chat_id))
+                if (!all_messages_id.ContainsKey(to_chat_id))
                 {
-                    all_paths[to_chat_id] = new List<string>();
+                    all_messages_id[to_chat_id] = new List<long>();
+                    all_paths_to_directiryes_without_files[to_chat_id] = new List<string>();
+                    all_messages_directiryes_without_files_id[to_chat_id] = new List<long>();
+                    all_paths_to_files_with_name[to_chat_id] = new List<string>();
+                    all_messages_files_id[to_chat_id] = new List<long>();
+                    /*all_paths[to_chat_id] = new List<string>();
                     all_messages_doc_id[to_chat_id] = new List<long>();
                     all_messages_images_id[to_chat_id] = new List<long>();
                     all_images_paths[to_chat_id] = new List<string>();
                     all_paths_to_directiryes[to_chat_id] = new List<string>();
                     all_messages_directiryes_id[to_chat_id] = new List<long>();
-                    all_paths_to_files_with_name[to_chat_id] = new List<string>();
+                    all_paths_to_files_with_name[to_chat_id] = new List<string>();*/
                 }
                 var tmp_path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tdlib", "tmp", new_text);
                 var file_path = Path.Combine(tmp_path, Struct_cloud.Get_name_children_by_id(messageId));
@@ -1382,6 +1435,8 @@ namespace Telegram_cloud
                 return;
             foreach (var i in messageId)
             {
+                if (i == 0)
+                    continue;
                 _isResultReceived = false;
                 is_updated = false;
                 var func = new TdApi.GetMessage(chatId, i);

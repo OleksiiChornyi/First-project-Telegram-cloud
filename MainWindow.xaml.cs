@@ -23,6 +23,7 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 using System.Windows.Threading;
 using WpfAnimatedGif;
+using System.Data.SQLite;
 using Path = System.IO.Path;
 
 namespace Telegram_cloud
@@ -780,19 +781,19 @@ namespace Telegram_cloud
             if (!is_OK)
                 return;
             //Struct_cloud.Change_tree();
-            if (TdCloud.all_messages_images_id[Struct_cloud.IdDrive].Count < 1)
+            if (TdCloud.all_messages_files_id[Struct_cloud.IdDrive].Count < 1)
                 return;
-            var all_id_images = new List<int>();
-            for(int i = 0; i < TdCloud.all_messages_images_id[Struct_cloud.IdDrive].Count; i++)
+            var all_index_images = new List<int>();
+            for(int i = 0; i < TdCloud.all_messages_files_id[Struct_cloud.IdDrive].Count; i++)
             {
-                if (TdCloud.images_formats.Any(TdCloud.all_images_paths[Struct_cloud.IdDrive][i].EndsWith))
-                    all_id_images.Add(i);
+                if (TdCloud.images_formats.Any(TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive][i].EndsWith))
+                    all_index_images.Add(i);
             }
-            if (all_id_images.Count < 1)
+            if (all_index_images.Count < 1)
                 return;
             Progress_bar.ToolTip = PB_In_progress;
             Progress_bar_add.IsIndeterminate = true;
-            Progress_bar.Maximum = all_id_images.Count;
+            Progress_bar.Maximum = all_index_images.Count;
             Progress_bar.Value = 0;
             Grid_Col_2.Width = new GridLength(0.1, GridUnitType.Star);
             Button_stop.Visibility = Visibility.Visible;
@@ -801,7 +802,7 @@ namespace Telegram_cloud
 
             mainThread = new Thread(o =>
             {
-                foreach (var i in all_id_images)
+                foreach (var i in all_index_images)
                 {
                     if (mainCancellationTokenSource.Token.IsCancellationRequested)
                     {
@@ -909,19 +910,19 @@ namespace Telegram_cloud
             if (!is_OK)
                 return;
             //Struct_cloud.Change_tree();
-            if (TdCloud.all_messages_images_id[Struct_cloud.IdDrive].Count < 1)
+            if (TdCloud.all_messages_files_id[Struct_cloud.IdDrive].Count < 1)
                 return;
-            var all_id_videos = new List<int>();
-            for (int i = 0; i < TdCloud.all_messages_images_id[Struct_cloud.IdDrive].Count; i++)
+            var all_index_videos = new List<int>();
+            for (int i = 0; i < TdCloud.all_messages_files_id[Struct_cloud.IdDrive].Count; i++)
             {
-                if (TdCloud.videos_formats.Any(TdCloud.all_images_paths[Struct_cloud.IdDrive][i].EndsWith) || TdCloud.gif_format.Any(TdCloud.all_images_paths[Struct_cloud.IdDrive][i].EndsWith))
-                    all_id_videos.Add(i);
+                if (TdCloud.videos_formats.Any(TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive][i].EndsWith) || TdCloud.gif_format.Any(TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive][i].EndsWith))
+                    all_index_videos.Add(i);
             }
-            if (all_id_videos.Count < 1)
+            if (all_index_videos.Count < 1)
                 return;
             Progress_bar.ToolTip = PB_In_progress;
             Progress_bar_add.IsIndeterminate = true;
-            Progress_bar.Maximum = all_id_videos.Count;
+            Progress_bar.Maximum = all_index_videos.Count;
             Progress_bar.Value = 0;
             Grid_Col_2.Width = new GridLength(0.1, GridUnitType.Star);
             Button_stop.Visibility = Visibility.Visible;
@@ -929,7 +930,7 @@ namespace Telegram_cloud
             Struct_cloud.Save_drive(Struct_cloud.NameDrive, Struct_cloud.IdDrive);
             mainThread = new Thread(o =>
             {
-                foreach (var i in all_id_videos)
+                foreach (var i in all_index_videos)
                 {
                     if (mainCancellationTokenSource.Token.IsCancellationRequested)
                     {
@@ -2093,7 +2094,8 @@ namespace Telegram_cloud
                                 }
                                 catch { }
                             }
-                            TdCloud.Move_message(Struct_cloud.IdDrive, Struct_cloud.IdDrive, id.Key, new_path);
+                            TdCloud.Edit_message(Struct_cloud.IdDrive, id.Key, new_path);
+                            //TdCloud.Move_message(Struct_cloud.IdDrive, Struct_cloud.IdDrive, id.Key, new_path);
                             if (is_exist)
                             {
                                 try
@@ -2616,13 +2618,13 @@ namespace Telegram_cloud
             }
             if (!is_OK)
                 return;
-            if (TdCloud.all_images_paths[Struct_cloud.IdDrive].Count < 1)
+            if (TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive].Count < 1)
                 return;
             var all_path_images = new List<string>();
-            for (int i = 0; i < TdCloud.all_images_paths[Struct_cloud.IdDrive].Count; i++)
+            for (int i = 0; i < TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive].Count; i++)
             {
-                if (TdCloud.images_formats.Any(TdCloud.all_images_paths[Struct_cloud.IdDrive][i].EndsWith))
-                    all_path_images.Add(TdCloud.all_images_paths[Struct_cloud.IdDrive][i]);
+                if (TdCloud.images_formats.Any(TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive][i].EndsWith))
+                    all_path_images.Add(TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive][i]);
             }
             if (all_path_images.Count < 1)
                 return;
@@ -2685,13 +2687,13 @@ namespace Telegram_cloud
             }
             if (!is_OK)
                 return;
-            if (TdCloud.all_images_paths[Struct_cloud.IdDrive].Count < 1)
+            if (TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive].Count < 1)
                 return;
             var all_path_images = new List<string>();
-            for (int i = 0; i < TdCloud.all_images_paths[Struct_cloud.IdDrive].Count; i++)
+            for (int i = 0; i < TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive].Count; i++)
             {
-                if (TdCloud.videos_formats.Any(TdCloud.all_images_paths[Struct_cloud.IdDrive][i].EndsWith) || TdCloud.gif_format.Any(TdCloud.all_images_paths[Struct_cloud.IdDrive][i].EndsWith))
-                    all_path_images.Add(TdCloud.all_images_paths[Struct_cloud.IdDrive][i]);
+                if (TdCloud.videos_formats.Any(TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive][i].EndsWith) || TdCloud.gif_format.Any(TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive][i].EndsWith))
+                    all_path_images.Add(TdCloud.all_paths_to_files_with_name[Struct_cloud.IdDrive][i]);
             }
             if (all_path_images.Count < 1)
                 return;
