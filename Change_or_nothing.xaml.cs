@@ -44,17 +44,17 @@ namespace Telegram_cloud
         {
             if (MainWindow.current_lang == MainWindow.Languages.en)
             {
-                Cange_or_nothing_text.Text = MainWindow.name_exist_file + "\n" + Telegram_cloud.Resources.Change_or_nothing_english.Cange_or_nothing_text_Text;
+                Cange_or_nothing_text.Text = MainWindow.nameExistFile + "\n" + Telegram_cloud.Resources.Change_or_nothing_english.Cange_or_nothing_text_Text;
                 CheckBox_do_it_for_all.Content = Telegram_cloud.Resources.Change_or_nothing_english.CheckBox_do_it_for_all_Content;
             }
             else if (MainWindow.current_lang == MainWindow.Languages.ua)
             {
-                Cange_or_nothing_text.Text = MainWindow.name_exist_file + "\n" + Telegram_cloud.Resources.Change_or_nothing_ukrainian.Cange_or_nothing_text_Text;
+                Cange_or_nothing_text.Text = MainWindow.nameExistFile + "\n" + Telegram_cloud.Resources.Change_or_nothing_ukrainian.Cange_or_nothing_text_Text;
                 CheckBox_do_it_for_all.Content = Telegram_cloud.Resources.Change_or_nothing_ukrainian.CheckBox_do_it_for_all_Content;
             }
             else if (MainWindow.current_lang == MainWindow.Languages.ru)
             {
-                Cange_or_nothing_text.Text = MainWindow.name_exist_file + "\n" + Telegram_cloud.Resources.Change_or_nothing_russian.Cange_or_nothing_text_Text;
+                Cange_or_nothing_text.Text = MainWindow.nameExistFile + "\n" + Telegram_cloud.Resources.Change_or_nothing_russian.Cange_or_nothing_text_Text;
                 CheckBox_do_it_for_all.Content = Telegram_cloud.Resources.Change_or_nothing_russian.CheckBox_do_it_for_all_Content;
             }
         }

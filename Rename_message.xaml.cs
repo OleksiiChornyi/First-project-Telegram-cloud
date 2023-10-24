@@ -41,7 +41,7 @@ namespace Telegram_cloud
         {
             if (e.Key != Key.Enter)
                 return;
-            MainWindow.new_name_file = Rename_message_text.Text;
+            MainWindow.newNameFile = Rename_message_text.Text;
             this.Close();
         }
     }

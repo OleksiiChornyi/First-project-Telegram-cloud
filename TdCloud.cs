@@ -75,8 +75,6 @@ namespace Telegram_cloud
         public static string file_name = "";
         public static bool can_download = true;
         public static bool is_file_open = true;
-        private readonly static Td.ClientResultHandler _getRemoteFileIdHandler = new Handlers.GetRemoteFileIDHandler();
-        public static string remoteDocId = "";
         //Properties Handler
         private readonly static Td.ClientResultHandler _properties_messageHandler = new Handlers.PropertiesHandler();
         public static string properties_message_name;
@@ -509,7 +507,7 @@ namespace Telegram_cloud
             {
                 Progress_bar.Dispatcher.Invoke(() =>
                 {
-                    Progress_bar.ToolTip = MainWindow.PB_In_progress;
+                    Progress_bar.ToolTip = MainWindow.PBInProgress;
                     Progress_bar_add.IsIndeterminate = true;
                 });
             }
@@ -521,7 +519,7 @@ namespace Telegram_cloud
                 {
                     Progress_bar.Dispatcher.Invoke(() =>
                     {
-                        Progress_bar.ToolTip = MainWindow.PB_Ready;
+                        Progress_bar.ToolTip = MainWindow.PBReady;
                         Progress_bar_add.IsIndeterminate = false;
                     });
                 }
@@ -552,7 +550,7 @@ namespace Telegram_cloud
                 {
                     Progress_bar.Dispatcher.Invoke(() =>
                     {
-                        if ((string)Progress_bar.ToolTip == MainWindow.PB_In_progress && Progress_bar.Value != Progress_bar.Maximum - 1)
+                        if ((string)Progress_bar.ToolTip == MainWindow.PBInProgress && Progress_bar.Value != Progress_bar.Maximum - 1)
                             Progress_bar.Value++;
                     });
                 }
@@ -561,7 +559,7 @@ namespace Telegram_cloud
             {
                 Progress_bar.Dispatcher.Invoke(() =>
                 {
-                    if ((string)Progress_bar.ToolTip == MainWindow.PB_In_progress)
+                    if ((string)Progress_bar.ToolTip == MainWindow.PBInProgress)
                         Progress_bar.Value = Progress_bar.Maximum;
                 });
             }

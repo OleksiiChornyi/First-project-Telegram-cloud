@@ -208,10 +208,10 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical" Height="135" Width="135" Cursor="Hand" HorizontalAlignment="Center">
-                        <Image gif:ImageBehavior.AnimatedSource="{Binding Image_src}" Width="100" Height="100" />
-                        <Grid Width="100">
-                            <TextBlock Text="{Binding Name}" ToolTip="{Binding Name}" Margin="5,0,0,0" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="{Binding SPOrient}" Height="{Binding SPHeight}" Width="{Binding SPWidth}" Cursor="Hand" Visibility="{Binding Visible}" HorizontalAlignment="Center">
+                        <Image gif:ImageBehavior.AnimatedSource="{Binding Image_src}" Width="{Binding ImgSize}" Height="{Binding ImgSize}" />
+                        <Grid Width="{Binding GridTBSize}">
+                            <TextBlock Text="{Binding Name}" ToolTip="{Binding Name}" Margin="5,0,0,0" TextWrapping="Wrap" HorizontalAlignment="{Binding TBHorizontalAlignment}" VerticalAlignment="Center"/>
                         </Grid>
                     </StackPanel>
                 </DataTemplate>

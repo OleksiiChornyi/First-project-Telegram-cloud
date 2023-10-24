@@ -93,11 +93,11 @@ namespace Telegram_cloud
                 {
                     if (((Telegram.Td.Api.User)(@object)).IsPremium)
                     {
-                        MainWindow.size_load_file_gigabytes = 4.0;
+                        MainWindow.sizeLoadFileGigabytes = 4.0;
                     }
                     else
                     {
-                        MainWindow.size_load_file_gigabytes = 2.0;
+                        MainWindow.sizeLoadFileGigabytes = 2.0;
                     }
                 }
                 catch { }
@@ -563,41 +563,6 @@ namespace Telegram_cloud
                     {
                         TdCloud.doc_id = ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.DocumentValue.Id;
                         TdCloud.file_name = ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.FileName;
-                        TdCloud._isResultReceived = true;
-                    }
-                }
-                catch { }
-            }
-        }
-        public class GetRemoteFileIDHandler : Td.ClientResultHandler
-        {
-            void Td.ClientResultHandler.OnResult(TdApi.BaseObject @object)
-            {
-                if (@object.GetType() != typeof(Telegram.Td.Api.Message))
-                {
-                    TdCloud._isResultReceived = true;
-                    return;
-                }
-                try
-                {
-                    if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessagePhoto))
-                    {
-                        TdCloud._isResultReceived = true;
-                    }
-                    if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessageVideo))
-                    {
-                        TdCloud.remoteDocId = ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.VideoValue.Remote.Id;
-                        TdCloud.file_name = ((Telegram.Td.Api.MessageVideo)((Telegram.Td.Api.Message)(@object)).Content).Video.FileName;
-                        TdCloud._isResultReceived = true;
-                    }
-                    else if (((Telegram.Td.Api.Message)(@object)).Content.GetType() == typeof(Telegram.Td.Api.MessageAnimation))
-                    {
-                        TdCloud.remoteDocId = ((Telegram.Td.Api.MessageAnimation)((Telegram.Td.Api.Message)(@object)).Content).Animation.AnimationValue.Remote.Id;
-                        TdCloud._isResultReceived = true;
-                    }
-                    else
-                    {
-                        TdCloud.remoteDocId = ((Telegram.Td.Api.MessageDocument)((Telegram.Td.Api.Message)(@object)).Content).Document.DocumentValue.Remote.Id;
                         TdCloud._isResultReceived = true;
                     }
                 }

@@ -33,24 +33,22 @@ namespace Telegram_cloud
     /// </summary>
     public partial class MainWindow : Window
     {
-        //name with _ - my variables
-        //name with variablesVariables - chatGPT or from Internet
         public enum Languages { en, ua, ru };
         public static Languages current_lang = Languages.en;
-        public static string PB_In_progress = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_In_progress;
-        public static string PB_Ready = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_Ready; 
+        public static string PBInProgress = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_In_progress;
+        public static string PBReady = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_Ready; 
         public static Thread td_client;
 
         public Dictionary<string, string> settings_json = Settings_json.LoadDictionaryFromJson();
         public static bool skip_all_next_files = false;
         public static bool change_file_in_drive = false;
-        public static string name_exist_file = "";
+        public static string nameExistFile = "";
         public static string new_text_message = "";
 
-        public static string new_name_file = "";
+        public static string newNameFile = "";
         public static bool isDownloadPhotoPreview = false;
         public static bool isDownloadVideoPreview = false;
-        public static double size_load_file_gigabytes = 2.0;
+        public static double sizeLoadFileGigabytes = 2.0;
 
         private Thread mainThread;
         static CancellationTokenSource mainCancellationTokenSource = new CancellationTokenSource();
@@ -60,14 +58,14 @@ namespace Telegram_cloud
         private readonly DispatcherTimer timer;
         private readonly double animationDuration = 5.0;
         private int timerTicks = 0;
-        private List<string> name_seletcedValues_delete = new List<string>();
+        private List<string> nameSeletcedValuesDelete = new List<string>();
 
-        private readonly List<string> name_seletcedValues = new List<string>();
+        private readonly List<string> nameSeletcedValues = new List<string>();
 
         private static bool open_with_one_click = false;
         private static bool is_dark_theme = false;
         private bool need_change_size = false;
-        private double _scale = 1;
+        public double _scale = 1;
 
         //public static string current_path;
         /// <summary>
@@ -466,7 +464,7 @@ namespace Telegram_cloud
                 MessageBox.Show("You are not autorize");
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -487,7 +485,7 @@ namespace Telegram_cloud
                 MessageBox.Show("You are not autorize");
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -499,14 +497,11 @@ namespace Telegram_cloud
         /// <summary>
         /// Change a full path in Window
         /// </summary>
-        private void Change_FullPath()
+        private void Change_FullPath(string path)
         {
             this.Dispatcher.Invoke(() =>
             {
-                if (Struct_cloud.Get_path() == "")
-                    Full_path.Text = Struct_cloud.NameDrive;
-                else
-                    Full_path.Text = Path.Combine(Struct_cloud.NameDrive, Struct_cloud.Get_path());
+                Full_path.Text = Path.Combine(Struct_cloud.NameDrive, path);
             });
         }
         /// <summary>
@@ -525,6 +520,7 @@ namespace Telegram_cloud
             }
             changeListViewItemsThread = new Thread(o =>
             {
+                Change_FullPath(path);
                 string exePath = Assembly.GetExecutingAssembly().Location;
                 string exeDir = Path.GetDirectoryName(exePath);
                 string directory_image = Path.Combine(exeDir, "directory.png");
@@ -605,7 +601,7 @@ namespace Telegram_cloud
                         need_change_size = true;
                     }
                 }
-                name_seletcedValues.Clear();
+                nameSeletcedValues.Clear();
             });
             changeListViewItemsThread.Start();
             //changeListViewItemsCancellationTokenSource
@@ -625,7 +621,7 @@ namespace Telegram_cloud
         /// <param name="path">Path of elements</param>
         private void Open_Tree(string name_drive, long id_drive)
         {
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = 1;
             Progress_bar.Value = 0;
@@ -636,7 +632,6 @@ namespace Telegram_cloud
 
                 //path = Path.Combine(name_drive, path);
                 Change_ListView_drive("");
-                Change_FullPath();
                 this.Dispatcher.Invoke(() =>
                 {
                     Progress_bar.Value++;
@@ -669,7 +664,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 foreach (MenuItem item in Drives_list.Items)
@@ -712,7 +707,6 @@ namespace Telegram_cloud
                         {
                             Update_tree(Progress_bar, Progress_bar_add, current_drive_name, current_drive_id);
                             settings_json["Current_drive_id"] = Struct_cloud.IdDrive.ToString();
-                            Change_FullPath();
                             Dispatcher.Run();
                         });
                         mainThread.Start();
@@ -732,7 +726,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -746,7 +740,6 @@ namespace Telegram_cloud
                     mainThread = new Thread(o =>
                     {
                         Update_tree(Progress_bar, Progress_bar_add, current_drive_name, current_drive_id);
-                        Change_FullPath();
                         Dispatcher.Run();
                     });
                     mainThread.Start();
@@ -764,7 +757,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -791,7 +784,7 @@ namespace Telegram_cloud
             }
             if (all_index_images.Count < 1)
                 return;
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = all_index_images.Count;
             Progress_bar.Value = 0;
@@ -831,7 +824,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -850,7 +843,7 @@ namespace Telegram_cloud
             var all_children_id_with_path = Struct_cloud.Get_all_current_directory_childdrens_images_index();
             if (all_children_id_with_path.Count < 1)
                 return;
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = all_children_id_with_path.Count;
             Progress_bar.Value = 0;
@@ -894,7 +887,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -920,7 +913,7 @@ namespace Telegram_cloud
             }
             if (all_index_videos.Count < 1)
                 return;
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = all_index_videos.Count;
             Progress_bar.Value = 0;
@@ -963,7 +956,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -982,7 +975,7 @@ namespace Telegram_cloud
             var all_children_id_with_path = Struct_cloud.Get_all_current_directory_childdrens_videos_index();
             if (all_children_id_with_path.Count < 1)
                 return;
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = all_children_id_with_path.Count;
             Progress_bar.Value = 0;
@@ -1038,21 +1031,21 @@ namespace Telegram_cloud
             //string name = ((System.Windows.Controls.Primitives.Selector)sender).SelectedValue.ToString();
             if (Struct_cloud.Get_format(name) == Formats.Directory)
             {
-                new Thread(o =>
+                if (timer.IsEnabled)
                 {
-                    Change_ListView_drive(Path.Combine(Struct_cloud.Get_path(), name));
-                    Change_FullPath();
-                    Dispatcher.Run();
-                }).Start();
+                    MessageBox.Show("Please confirm or stop delete");
+                    return;
+                }
+                Change_ListView_drive(Path.Combine(Struct_cloud.Get_path(), name));
             }
             else
             {
-                if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+                if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
                 {
                     MessageBox.Show("Please wait for the process to complete");
                     return;
                 }
-                Progress_bar.ToolTip = PB_In_progress;
+                Progress_bar.ToolTip = PBInProgress;
                 Progress_bar_add.IsIndeterminate = true;
                 Progress_bar.Maximum = 10;
                 Progress_bar.Value = 0;
@@ -1107,21 +1100,21 @@ namespace Telegram_cloud
                 string new_item = ((ImageItem)elementUnderMouse.DataContext).Name;
                 if (Keyboard.Modifiers == ModifierKeys.Control)
                 {
-                    if (name_seletcedValues.Contains(new_item))
+                    if (nameSeletcedValues.Contains(new_item))
                     {
-                        name_seletcedValues.Remove(new_item);
+                        nameSeletcedValues.Remove(new_item);
                     }
                     else
                     {
-                        name_seletcedValues.Add(new_item);
+                        nameSeletcedValues.Add(new_item);
                     }
                     if (open_with_one_click)
                         return;
                 }
                 else
                 {
-                    name_seletcedValues.Clear();
-                    name_seletcedValues.Add(new_item);
+                    nameSeletcedValues.Clear();
+                    nameSeletcedValues.Add(new_item);
                 }
             }
 
@@ -1139,21 +1132,25 @@ namespace Telegram_cloud
             string name = ((ImageItem)((System.Windows.Controls.Primitives.Selector)sender).SelectedItem).Name.ToString();
             if (Struct_cloud.Get_format(name) == Formats.Directory)
             {
+                if (timer.IsEnabled)
+                {
+                    MessageBox.Show("Please confirm or stop delete");
+                    return;
+                }
                 new Thread(o =>
                 {
                     Change_ListView_drive(Path.Combine(Struct_cloud.Get_path(), name));
-                    Change_FullPath();
                     Dispatcher.Run();
                 }).Start();
             }
             else
             {
-                if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+                if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
                 {
                     MessageBox.Show("Please wait for the process to complete");
                     return;
                 }
-                Progress_bar.ToolTip = PB_In_progress;
+                Progress_bar.ToolTip = PBInProgress;
                 Progress_bar_add.IsIndeterminate = true;
                 Progress_bar.Maximum = 10;
                 Progress_bar.Value = 0;
@@ -1202,10 +1199,10 @@ namespace Telegram_cloud
             {
                 string new_item = ((ImageItem)elementUnderMouse.DataContext).Name;
 
-                if (Keyboard.Modifiers != ModifierKeys.Control && !name_seletcedValues.Contains(new_item))
+                if (Keyboard.Modifiers != ModifierKeys.Control && !nameSeletcedValues.Contains(new_item))
                 {
-                    name_seletcedValues.Clear();
-                    name_seletcedValues.Add(new_item);
+                    nameSeletcedValues.Clear();
+                    nameSeletcedValues.Add(new_item);
                 }
             }
         }
@@ -1239,7 +1236,7 @@ namespace Telegram_cloud
                 return true;
             }
             long fileSizeInBytes = fileInfo.Length;
-            double size_load_file_bytes = size_load_file_gigabytes * Math.Pow(1024, 3);
+            double size_load_file_bytes = sizeLoadFileGigabytes * Math.Pow(1024, 3);
             if (fileSizeInBytes > size_load_file_bytes)
             {
                 string message_text = "You can`t load a file " + Path.GetFileName(path) + "\nWith path: " + path + "\nBecause this file is too big.";
@@ -1260,7 +1257,7 @@ namespace Telegram_cloud
 
             if (!TdCloud._haveAuthorization)
                 return;
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -1286,7 +1283,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = msgs.Count;
             Progress_bar.Value = 0;
@@ -1305,7 +1302,7 @@ namespace Telegram_cloud
                     bool is_exist = Struct_cloud.Check_exist_in_children(Struct_cloud.NameDrive, msg.Value, Path.GetFileName(msg.Key));
                     if (is_exist)
                     {
-                        name_exist_file = Path.GetFileName(msg.Key);
+                        nameExistFile = Path.GetFileName(msg.Key);
                         if (!skip_all_next_files)
                             this.Dispatcher.Invoke(() =>
                             {
@@ -1387,7 +1384,7 @@ namespace Telegram_cloud
                 MessageBox.Show("You are not autorize");
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -1401,7 +1398,7 @@ namespace Telegram_cloud
             string curr_path = Struct_cloud.Get_path();
             if (ofd.ShowDialog() == true)
             {
-                Progress_bar.ToolTip = PB_In_progress;
+                Progress_bar.ToolTip = PBInProgress;
                 Progress_bar_add.IsIndeterminate = true;
                 Progress_bar.Maximum = ofd.FileNames.Length;
                 Progress_bar.Value = 0;
@@ -1422,7 +1419,7 @@ namespace Telegram_cloud
                             bool is_exist = Struct_cloud.Check_exist_in_children(Struct_cloud.NameDrive, curr_path, Path.GetFileName(msg));
                             if (is_exist)
                             {
-                                name_exist_file = Path.GetFileName(msg);
+                                nameExistFile = Path.GetFileName(msg);
                                 if (!skip_all_next_files)
                                     this.Dispatcher.Invoke(() =>
                                         {
@@ -1490,9 +1487,9 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_pin_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            foreach (var name in name_seletcedValues)
+            foreach (var name in nameSeletcedValues)
             {
                 TdCloud.Pin_Message(Struct_cloud.IdDrive, Struct_cloud.Get_message_id(name));
             }
@@ -1504,9 +1501,9 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_unpin_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            foreach (var name in name_seletcedValues)
+            foreach (var name in nameSeletcedValues)
             {
                 TdCloud.Unpin_Message(Struct_cloud.IdDrive, Struct_cloud.Get_message_id(name));
             }
@@ -1518,9 +1515,9 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_download_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -1537,7 +1534,7 @@ namespace Telegram_cloud
             if (selectedFolderPath == null)
                 return;
             long count = 0;
-            var names = new List<string>(name_seletcedValues);
+            var names = new List<string>(nameSeletcedValues);
             foreach (var item in names)
             {
                 if (Struct_cloud.Get_format(item) == Formats.File)
@@ -1549,7 +1546,7 @@ namespace Telegram_cloud
                     count += Struct_cloud.Get_all_childdrens_id(item).Count;
                 }
             }
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = count;
             Progress_bar.Value = 0;
@@ -1617,15 +1614,15 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_download_current_preview_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
             }
-            var names = new List<string>(name_seletcedValues);
-            Progress_bar.ToolTip = PB_In_progress;
+            var names = new List<string>(nameSeletcedValues);
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = names.Count;
             Progress_bar.Value = 0;
@@ -1684,16 +1681,16 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_delete_current_preview_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
             }
 
-            var names = new List<string>(name_seletcedValues);
-            Progress_bar.ToolTip = PB_In_progress;
+            var names = new List<string>(nameSeletcedValues);
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = names.Count;
             Progress_bar.Value = 0;
@@ -1749,9 +1746,9 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_move_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -1767,7 +1764,7 @@ namespace Telegram_cloud
                 return;
 
             long count = 0;
-            var names = new List<string>(name_seletcedValues);
+            var names = new List<string>(nameSeletcedValues);
             foreach (var item in names)
             {
                 if (Struct_cloud.Get_format(item) == Formats.File)
@@ -1779,7 +1776,7 @@ namespace Telegram_cloud
                     count += Struct_cloud.Get_all_childdrens_id(item).Count;
                 }
             }
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = count;
             Progress_bar.Value = 0;
@@ -1806,7 +1803,7 @@ namespace Telegram_cloud
                             bool is_exist = Struct_cloud.Check_exist_in_children(move_drive_name, new_text_message, Path.GetFileName(file_path));
                             if (is_exist)
                             {
-                                name_exist_file = Path.GetFileName(file_path);
+                                nameExistFile = Path.GetFileName(file_path);
                                 if (!skip_all_next_files)
                                     this.Dispatcher.Invoke(() =>
                                     {
@@ -1871,7 +1868,7 @@ namespace Telegram_cloud
                                 bool is_exist = Struct_cloud.Check_exist_in_children(move_drive_name, Path.Combine(new_text_message, Path.GetDirectoryName(id.Value)), Path.GetFileName(file_path));
                                 if (is_exist)
                                 {
-                                    name_exist_file = Path.GetFileName(file_path);
+                                    nameExistFile = Path.GetFileName(file_path);
                                     if (!skip_all_next_files)
                                         this.Dispatcher.Invoke(() =>
                                         {
@@ -1925,7 +1922,6 @@ namespace Telegram_cloud
                         {
                             Struct_cloud.Update_tree();
                             Change_ListView_drive(Struct_cloud.Get_path());
-                            Change_FullPath();
                         }
                     }
                     catch (Exception ex)
@@ -1944,27 +1940,27 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_rename_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
             }
-            if (name_seletcedValues.Count > 1)
+            if (nameSeletcedValues.Count > 1)
             {
                 MessageBox.Show("You can't rename so many elements");
                 return;
             }
-            new_name_file = null;
+            newNameFile = null;
             skip_all_next_files = false;
             change_file_in_drive = false;
             Rename_message Rename_message_text_form = new Rename_message();
             Rename_message_text_form.ShowDialog();
-            if (new_name_file == null)
+            if (newNameFile == null)
                 return;
 
-            string name_files = name_seletcedValues[0];
+            string name_files = nameSeletcedValues[0];
 
             string curr_path = Struct_cloud.Get_path();
             try
@@ -1975,18 +1971,18 @@ namespace Telegram_cloud
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            Progress_bar.ToolTip = PB_In_progress;
+                            Progress_bar.ToolTip = PBInProgress;
                             Progress_bar_add.IsIndeterminate = true;
                             Progress_bar.Maximum = 1;
                             Progress_bar.Value = 0;
                         });
                         var id = Struct_cloud.Get_message_id(name_files);
                         var old_path = Struct_cloud.Get_full_path_by_id(id);
-                        new_name_file += Path.GetExtension(old_path);
-                        bool is_exist = Struct_cloud.Check_exist_in_children(Struct_cloud.NameDrive, Path.GetDirectoryName(old_path), Path.GetFileName(new_name_file));
+                        newNameFile += Path.GetExtension(old_path);
+                        bool is_exist = Struct_cloud.Check_exist_in_children(Struct_cloud.NameDrive, Path.GetDirectoryName(old_path), Path.GetFileName(newNameFile));
                         if (is_exist)
                         {
-                            name_exist_file = Path.GetFileName(new_name_file);
+                            nameExistFile = Path.GetFileName(newNameFile);
                             if (!skip_all_next_files)
                                 this.Dispatcher.Invoke(() =>
                                 {
@@ -2005,18 +2001,18 @@ namespace Telegram_cloud
                         {
                             try
                             {
-                                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Struct_cloud.NameDrive, curr_path, Path.GetFileName(new_name_file));
+                                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Struct_cloud.NameDrive, curr_path, Path.GetFileName(newNameFile));
                                 if (File.Exists(path))
                                     File.Delete(path);
                             }
                             catch { }
                         }
-                        TdCloud.Rename_file(Struct_cloud.IdDrive, id, Path.GetDirectoryName(old_path), new_name_file);
+                        TdCloud.Rename_file(Struct_cloud.IdDrive, id, Path.GetDirectoryName(old_path), newNameFile);
                         if (is_exist)
                         {
                             try
                             {
-                                TdCloud.Delete_file(Struct_cloud.IdDrive, new long[1] { Struct_cloud.Get_childdren_id_by_full_path(Path.GetDirectoryName(old_path), new_name_file) });
+                                TdCloud.Delete_file(Struct_cloud.IdDrive, new long[1] { Struct_cloud.Get_childdren_id_by_full_path(Path.GetDirectoryName(old_path), newNameFile) });
                             }
                             catch { }
                         }
@@ -2034,7 +2030,7 @@ namespace Telegram_cloud
                             return;
                         this.Dispatcher.Invoke(() =>
                         {
-                            Progress_bar.ToolTip = PB_In_progress;
+                            Progress_bar.ToolTip = PBInProgress;
                             Progress_bar_add.IsIndeterminate = true;
                             Progress_bar.Maximum = list_child.Count + list_child_directory.Count;
                             Progress_bar.Value = 0;
@@ -2059,7 +2055,7 @@ namespace Telegram_cloud
                             }
                             var tmp_tmp_path = Path.GetDirectoryName(id.Value);
                             int index = tmp_tmp_path.IndexOf("\\");
-                            var new_path = Path.Combine(curr_path, new_name_file);
+                            var new_path = Path.Combine(curr_path, newNameFile);
                             if (index != -1)
                             {
                                 new_path += tmp_tmp_path.Substring(index);
@@ -2069,7 +2065,7 @@ namespace Telegram_cloud
                             bool is_exist = Struct_cloud.Check_exist_in_children(Struct_cloud.NameDrive, new_path, Path.GetFileName(id.Value));
                             if (is_exist)
                             {
-                                name_exist_file = Path.GetFileName(file_path);
+                                nameExistFile = Path.GetFileName(file_path);
                                 if (!skip_all_next_files)
                                     this.Dispatcher.Invoke(() =>
                                     {
@@ -2114,7 +2110,6 @@ namespace Telegram_cloud
                     }
                     Struct_cloud.Update_tree();
                     Change_ListView_drive(Struct_cloud.Get_path());
-                    Change_FullPath();
 
                     Dispatcher.Run();
                 });
@@ -2123,6 +2118,22 @@ namespace Telegram_cloud
             catch (Exception ex)
             {
                 MessageBox.Show("Error with move\n" + ex.ToString());
+            }
+        }
+        private void SetItemVisibility(Visibility Visible)
+        {
+            if (nameSeletcedValuesDelete.Count == 0)
+                return;
+            var items = Directory_list.ItemsSource as ObservableCollection<ImageItem>;
+            if (items == null)
+                return;
+            foreach (var itemName in nameSeletcedValuesDelete)
+            {
+                var itemToChange = items.FirstOrDefault(item => item.Name == itemName);
+                if (itemToChange != null)
+                {
+                    itemToChange.Visible = Visible;
+                }
             }
         }
         private void Button_stop_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -2147,33 +2158,34 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_delete_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            if (Progress_bar.ToolTip.Equals(PB_In_progress))
+            if (Progress_bar.ToolTip.Equals(PBInProgress))
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
             }
 
-            List<string> names = name_seletcedValues.Except(name_seletcedValues_delete).ToList();
+            List<string> names = nameSeletcedValues.Except(nameSeletcedValuesDelete).ToList();
 
             var storyboard = (Storyboard)Button_stop.Resources["StoryboardButtonStop"];
             var circle = (Ellipse)Button_stop.Template.FindName("PART_Circle", Button_stop);
             Storyboard.SetTarget(storyboard, circle);
-            if (timer.IsEnabled && name_seletcedValues.SequenceEqual(name_seletcedValues_delete))
+            if (timer.IsEnabled && nameSeletcedValues.SequenceEqual(nameSeletcedValuesDelete))
             {
                 timer.Stop();
                 storyboard.Stop();
                 Grid_Col_2.Width = new GridLength(0, GridUnitType.Star);
                 Button_stop.Visibility = Visibility.Hidden;
-                Delete_files(name_seletcedValues_delete);
-                name_seletcedValues_delete.Clear();
+                Delete_files(nameSeletcedValuesDelete);
+                nameSeletcedValuesDelete.Clear();
             }
-            name_seletcedValues_delete = names;
-            if (name_seletcedValues_delete.Count == 0)
+            nameSeletcedValuesDelete = names;
+            if (nameSeletcedValuesDelete.Count == 0)
             {
                 return;
             }
+            SetItemVisibility(Visibility.Collapsed);
             timerTicks = 0;
             timer.Start();
             storyboard.Begin();
@@ -2183,9 +2195,9 @@ namespace Telegram_cloud
 
         private void Button_stop_Click(object sender, RoutedEventArgs e)
         {
-            name_seletcedValues_delete.Clear();
             if (timer.IsEnabled)
             {
+                SetItemVisibility(Visibility.Visible);
                 var storyboard = (Storyboard)Button_stop.Resources["StoryboardButtonStop"];
                 var circle = (Ellipse)Button_stop.Template.FindName("PART_Circle", Button_stop);
                 Storyboard.SetTarget(storyboard, circle);
@@ -2209,25 +2221,27 @@ namespace Telegram_cloud
                     {
                         Grid_Col_2.Width = new GridLength(0, GridUnitType.Star);
                         Button_stop.Visibility = Visibility.Hidden;
-                        if (Progress_bar.ToolTip.Equals(PB_In_progress))
+                        if (Progress_bar.ToolTip.Equals(PBInProgress))
                             Progress_bar.Value = Progress_bar.Maximum;
                     });
                     Dispatcher.Run();
                 }).Start();
             }
+            nameSeletcedValuesDelete.Clear();
         }
         private void TdCloud_Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space)
             {
-                if (name_seletcedValues.Count > 1)
+                if (nameSeletcedValues.Count > 1)
                 {
-                    name_seletcedValues.RemoveRange(0, name_seletcedValues.Count - 1);
+                    nameSeletcedValues.RemoveRange(0, nameSeletcedValues.Count - 1);
                 }
-                name_seletcedValues_delete.Clear();
+                
 
                 if (timer.IsEnabled)
                 {
+                    SetItemVisibility(Visibility.Visible);
                     var storyboard = (Storyboard)Button_stop.Resources["StoryboardButtonStop"];
                     var circle = (Ellipse)Button_stop.Template.FindName("PART_Circle", Button_stop);
                     Storyboard.SetTarget(storyboard, circle);
@@ -2251,42 +2265,44 @@ namespace Telegram_cloud
                         {
                             Grid_Col_2.Width = new GridLength(0, GridUnitType.Star);
                             Button_stop.Visibility = Visibility.Hidden;
-                            if (Progress_bar.ToolTip.Equals(PB_In_progress))
+                            if (Progress_bar.ToolTip.Equals(PBInProgress))
                                 Progress_bar.Value = Progress_bar.Maximum;
                         });
                         Dispatcher.Run();
                     }).Start();
                 }
+                nameSeletcedValuesDelete.Clear();
             }
             if (e.Key == Key.Delete)
             {
-                if (name_seletcedValues.Count == 0)
+                if (nameSeletcedValues.Count == 0)
                     return;
-                if (Progress_bar.ToolTip.Equals(PB_In_progress))
+                if (Progress_bar.ToolTip.Equals(PBInProgress))
                 {
                     MessageBox.Show("Please wait for the process to complete");
                     return;
                 }
 
-                List<string> names = name_seletcedValues.Except(name_seletcedValues_delete).ToList();
+                List<string> names = nameSeletcedValues.Except(nameSeletcedValuesDelete).ToList();
 
                 var storyboard = (Storyboard)Button_stop.Resources["StoryboardButtonStop"];
                 var circle = (Ellipse)Button_stop.Template.FindName("PART_Circle", Button_stop);
                 Storyboard.SetTarget(storyboard, circle);
-                if (timer.IsEnabled && name_seletcedValues.SequenceEqual(name_seletcedValues_delete))
+                if (timer.IsEnabled && nameSeletcedValues.SequenceEqual(nameSeletcedValuesDelete))
                 {
                     timer.Stop();
                     storyboard.Stop();
                     Grid_Col_2.Width = new GridLength(0, GridUnitType.Star);
                     Button_stop.Visibility = Visibility.Hidden;
-                    Delete_files(name_seletcedValues_delete);
-                    name_seletcedValues_delete.Clear();
+                    Delete_files(nameSeletcedValuesDelete);
+                    nameSeletcedValuesDelete.Clear();
                 }
-                name_seletcedValues_delete = names;
-                if (name_seletcedValues_delete.Count == 0)
+                nameSeletcedValuesDelete = names;
+                if (nameSeletcedValuesDelete.Count == 0)
                 {
                     return;
                 }
+                SetItemVisibility(Visibility.Collapsed);
                 timerTicks = 0;
                 timer.Start();
                 storyboard.Begin();
@@ -2302,14 +2318,14 @@ namespace Telegram_cloud
             circle.StrokeDashOffset = strokeDashOffset;
             var storyboard = (Storyboard)Button_stop.Resources["StoryboardButtonStop"];
             Storyboard.SetTarget(storyboard, circle);
-            /*if (Progress_bar.ToolTip.Equals(PB_In_progress))
+            /*if (Progress_bar.ToolTip.Equals(PBInProgress))
             {
                 timer.Stop();
                 storyboard.Stop();
                 Grid_Col_2.Width = new GridLength(0, GridUnitType.Star);
                 Button_stop.Visibility = Visibility.Hidden;
-                Delete_files(name_seletcedValues_delete);
-                name_seletcedValues_delete.Clear();
+                Delete_files(nameSeletcedValuesDelete);
+                nameSeletcedValuesDelete.Clear();
                 return;
             }*/
 
@@ -2319,8 +2335,8 @@ namespace Telegram_cloud
                 storyboard.Stop();
                 Grid_Col_2.Width = new GridLength(0, GridUnitType.Star);
                 Button_stop.Visibility = Visibility.Hidden;
-                Delete_files(name_seletcedValues_delete);
-                name_seletcedValues_delete.Clear();
+                Delete_files(nameSeletcedValuesDelete);
+                nameSeletcedValuesDelete.Clear();
             }
             else
             {
@@ -2333,9 +2349,8 @@ namespace Telegram_cloud
             {
                 return;
             }
-            ////  ARE YOU SHURE????????????
-
-            Progress_bar.ToolTip = PB_In_progress;
+            
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = delete_files.Count;
             Progress_bar.Value = 0;
@@ -2365,7 +2380,6 @@ namespace Telegram_cloud
 
                             Struct_cloud.Update_tree();
                             Change_ListView_drive(Struct_cloud.Get_path());
-                            Change_FullPath();
                         }
                         catch (Exception ex)
                         {
@@ -2387,7 +2401,6 @@ namespace Telegram_cloud
 
                             Struct_cloud.Update_tree();
                             Change_ListView_drive(Struct_cloud.Get_path());
-                            Change_FullPath();
                         }
                         catch (Exception ex)
                         {
@@ -2410,15 +2423,15 @@ namespace Telegram_cloud
         /// <param name="e"></param>
         private void Menu_item_properties_Click(object sender, RoutedEventArgs e)
         {
-            if (name_seletcedValues.Count == 0)
+            if (nameSeletcedValues.Count == 0)
                 return;
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
             }
-            List<string> names = name_seletcedValues;
-            Progress_bar.ToolTip = MainWindow.PB_In_progress;
+            List<string> names = nameSeletcedValues;
+            Progress_bar.ToolTip = MainWindow.PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = names.Count;
             Progress_bar.Value = 0;
@@ -2454,7 +2467,7 @@ namespace Telegram_cloud
                     MessageBox.Show("Error with delete file\n" + ex.ToString());
                     Progress_bar.Dispatcher.Invoke(() =>
                     {
-                        if (!Progress_bar.ToolTip.Equals(PB_Ready))
+                        if (!Progress_bar.ToolTip.Equals(PBReady))
                             Progress_bar.Value = Progress_bar.Maximum;
                     });
                 }
@@ -2474,7 +2487,7 @@ namespace Telegram_cloud
                 MessageBox.Show("You are not autorize");
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -2495,7 +2508,7 @@ namespace Telegram_cloud
             {
                 var all_childrens_path = Struct_cloud.Get_all_paths();
                 var all_childrens_id = Struct_cloud.Get_all_files_ids();
-                Progress_bar.ToolTip = PB_In_progress;
+                Progress_bar.ToolTip = PBInProgress;
                 Progress_bar_add.IsIndeterminate = true;
                 Progress_bar.Maximum = all_childrens_id.Count;
                 Progress_bar.Value = 0;
@@ -2539,7 +2552,7 @@ namespace Telegram_cloud
                 MessageBox.Show("You are not autorize");
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -2560,7 +2573,7 @@ namespace Telegram_cloud
             {
                 var all_childrens_path = Struct_cloud.Get_all_children_paths();
                 var all_childrens_id = Struct_cloud.Get_all_children_files_ids();
-                Progress_bar.ToolTip = PB_In_progress;
+                Progress_bar.ToolTip = PBInProgress;
                 Progress_bar_add.IsIndeterminate = true;
                 Progress_bar.Maximum = all_childrens_id.Count;
                 Progress_bar.Value = 0;
@@ -2603,7 +2616,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -2628,7 +2641,7 @@ namespace Telegram_cloud
             }
             if (all_path_images.Count < 1)
                 return;
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = all_path_images.Count;
             Progress_bar.Value = 0;
@@ -2672,7 +2685,7 @@ namespace Telegram_cloud
             {
                 return;
             }
-            if (Progress_bar.ToolTip.Equals(PB_In_progress) || timer.IsEnabled)
+            if (Progress_bar.ToolTip.Equals(PBInProgress) || timer.IsEnabled)
             {
                 MessageBox.Show("Please wait for the process to complete");
                 return;
@@ -2697,7 +2710,7 @@ namespace Telegram_cloud
             }
             if (all_path_images.Count < 1)
                 return;
-            Progress_bar.ToolTip = PB_In_progress;
+            Progress_bar.ToolTip = PBInProgress;
             Progress_bar_add.IsIndeterminate = true;
             Progress_bar.Maximum = all_path_images.Count;
             Progress_bar.Value = 0;
@@ -2742,7 +2755,6 @@ namespace Telegram_cloud
             new Thread(o =>
             {
                 Change_ListView_drive(Struct_cloud.Get_path());
-                Change_FullPath();
 
                 Dispatcher.Run();
             }).Start();
@@ -2757,7 +2769,7 @@ namespace Telegram_cloud
         {
             if (e.NewValue == Progress_bar.Maximum)
             {
-                Progress_bar.ToolTip = PB_Ready;
+                Progress_bar.ToolTip = PBReady;
                 Progress_bar_add.IsIndeterminate = false;
                 Progress_bar.Value = 0;
 
@@ -2983,7 +2995,7 @@ namespace Telegram_cloud
                 Download_video_previews_automatically.ToolTip = Telegram_cloud.Resources.Resource_english.Download_video_previews_automatically_ToolTip;
                 About_program.Header = Telegram_cloud.Resources.Resource_english.About_program_Header;
                 About_program.ToolTip = Telegram_cloud.Resources.Resource_english.About_program_ToolTip;
-                if (Progress_bar.ToolTip.Equals(PB_Ready))
+                if (Progress_bar.ToolTip.Equals(PBReady))
                 {
                     Progress_bar.ToolTip = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_Ready;
                 }
@@ -2991,8 +3003,8 @@ namespace Telegram_cloud
                 {
                     Progress_bar.ToolTip = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_In_progress;
                 }
-                PB_In_progress = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_In_progress;
-                PB_Ready = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_Ready;
+                PBInProgress = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_In_progress;
+                PBReady = Telegram_cloud.Resources.Resource_english.Progress_bar_ToolTip_Ready;
                 Text_complete.Text = Telegram_cloud.Resources.Resource_english.Text_complete_Text;
                 Menu_item_create_directory.Header = Telegram_cloud.Resources.Resource_english.Menu_item_create_directory_Header;
                 Menu_item_add_file.Header = Telegram_cloud.Resources.Resource_english.Menu_item_add_file_Header;
@@ -3045,7 +3057,7 @@ namespace Telegram_cloud
                 Download_video_previews_automatically.ToolTip = Telegram_cloud.Resources.Resource_ukrainian.Download_video_previews_automatically_ToolTip;
                 About_program.Header = Telegram_cloud.Resources.Resource_ukrainian.About_program_Header;
                 About_program.ToolTip = Telegram_cloud.Resources.Resource_ukrainian.About_program_ToolTip;
-                if (Progress_bar.ToolTip.Equals(PB_Ready))
+                if (Progress_bar.ToolTip.Equals(PBReady))
                 {
                     Progress_bar.ToolTip = Telegram_cloud.Resources.Resource_ukrainian.Progress_bar_ToolTip_Ready;
                 }
@@ -3053,8 +3065,8 @@ namespace Telegram_cloud
                 {
                     Progress_bar.ToolTip = Telegram_cloud.Resources.Resource_ukrainian.Progress_bar_ToolTip_In_progress;
                 }
-                PB_In_progress = Telegram_cloud.Resources.Resource_ukrainian.Progress_bar_ToolTip_In_progress;
-                PB_Ready = Telegram_cloud.Resources.Resource_ukrainian.Progress_bar_ToolTip_Ready;
+                PBInProgress = Telegram_cloud.Resources.Resource_ukrainian.Progress_bar_ToolTip_In_progress;
+                PBReady = Telegram_cloud.Resources.Resource_ukrainian.Progress_bar_ToolTip_Ready;
                 Text_complete.Text = Telegram_cloud.Resources.Resource_ukrainian.Text_complete_Text;
                 Menu_item_create_directory.Header = Telegram_cloud.Resources.Resource_ukrainian.Menu_item_create_directory_Header;
                 Menu_item_add_file.Header = Telegram_cloud.Resources.Resource_ukrainian.Menu_item_add_file_Header;
@@ -3107,7 +3119,7 @@ namespace Telegram_cloud
                 Download_video_previews_automatically.ToolTip = Telegram_cloud.Resources.Resource_russian.Download_video_previews_automatically_ToolTip;
                 About_program.Header = Telegram_cloud.Resources.Resource_russian.About_program_Header;
                 About_program.ToolTip = Telegram_cloud.Resources.Resource_russian.About_program_ToolTip;
-                if (Progress_bar.ToolTip.Equals(PB_Ready))
+                if (Progress_bar.ToolTip.Equals(PBReady))
                 {
                     Progress_bar.ToolTip = Telegram_cloud.Resources.Resource_russian.Progress_bar_ToolTip_Ready;
                 }
@@ -3115,8 +3127,8 @@ namespace Telegram_cloud
                 {
                     Progress_bar.ToolTip = Telegram_cloud.Resources.Resource_russian.Progress_bar_ToolTip_In_progress;
                 }
-                PB_In_progress = Telegram_cloud.Resources.Resource_russian.Progress_bar_ToolTip_In_progress;
-                PB_Ready = Telegram_cloud.Resources.Resource_russian.Progress_bar_ToolTip_Ready;
+                PBInProgress = Telegram_cloud.Resources.Resource_russian.Progress_bar_ToolTip_In_progress;
+                PBReady = Telegram_cloud.Resources.Resource_russian.Progress_bar_ToolTip_Ready;
                 Text_complete.Text = Telegram_cloud.Resources.Resource_russian.Text_complete_Text;
                 Menu_item_create_directory.Header = Telegram_cloud.Resources.Resource_russian.Menu_item_create_directory_Header;
                 Menu_item_add_file.Header = Telegram_cloud.Resources.Resource_russian.Menu_item_add_file_Header;
@@ -3196,56 +3208,28 @@ namespace Telegram_cloud
             {
                 double.TryParse(settings_json["_scale"], out _scale);
             }
-            foreach (var item in Directory_list.Items)
+            var items = Directory_list.ItemsSource as ObservableCollection<ImageItem>;
+            if (items == null)
+                return;
+            foreach (var item in items)
             {
-                ListViewItem listViewItem = (ListViewItem)Directory_list.ItemContainerGenerator.ContainerFromItem(item);
-                if (listViewItem != null)
+                item.SPHeight = 135 * _scale;
+                item.ImgSize = 100 * _scale;
+                if (_scale <= 0.5)
                 {
-                    var stackPanel = FindVisualChild<StackPanel>(listViewItem);
-                    if (stackPanel != null)
-                    {
-                        var image = FindVisualChild<Image>(stackPanel);
-                        var Grid_textBlock = FindVisualChild<Grid>(stackPanel);
-                        var textBlock = FindVisualChild<TextBlock>(stackPanel);
-
-                        stackPanel.Height = 135 * _scale;
-                        image.Width = 100 * _scale;
-                        image.Height = 100 * _scale;
-                        if (_scale <= 0.5)
-                        {
-                            stackPanel.Orientation = Orientation.Horizontal;
-                            stackPanel.Width = Directory_list.ActualWidth - 135 * _scale;
-
-                            textBlock.HorizontalAlignment = HorizontalAlignment.Left;
-                            Grid_textBlock.Width = Directory_list.ActualWidth - 135 * _scale;
-                        }
-                        else
-                        {
-                            stackPanel.Orientation = Orientation.Vertical;
-                            stackPanel.Width = 135 * _scale;
-
-                            textBlock.HorizontalAlignment = HorizontalAlignment.Center;
-                            Grid_textBlock.Width = 100 * _scale;
-                        }
-                    }
+                    item.SPOrient = Orientation.Horizontal;
+                    item.SPWidth = Directory_list.ActualWidth - 135 * _scale;
+                    item.TBHorizontalAlignment = HorizontalAlignment.Left;
+                    item.GridTBSize = Directory_list.ActualWidth - 135 * _scale;
                 }
-            }
-        }
-        private childItem FindVisualChild<childItem>(DependencyObject obj) where childItem : DependencyObject
-        {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
-            {
-                DependencyObject child = VisualTreeHelper.GetChild(obj, i);
-                if (child != null && child is childItem item)
-                    return item;
                 else
                 {
-                    childItem childOfChild = FindVisualChild<childItem>(child);
-                    if (childOfChild != null)
-                        return childOfChild;
+                    item.SPOrient = Orientation.Vertical;
+                    item.SPWidth = 135 * _scale;
+                    item.TBHorizontalAlignment = HorizontalAlignment.Center;
+                    item.GridTBSize = 100 * _scale;
                 }
             }
-            return null;
         }
 
         private void TdCloud_Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -3306,7 +3290,7 @@ namespace Telegram_cloud
     /// <summary>
     /// Class to show all items in directory list
     /// </summary>
-    public class ImageItem
+    public class ImageItem : INotifyPropertyChanged
     {
         /// <summary>
         /// Text of item
@@ -3329,6 +3313,90 @@ namespace Telegram_cloud
                 this.Image_src = Convert(this.Image);
             }
         }
+        private Orientation _soOrient = Orientation.Vertical;
+
+        public Orientation SPOrient
+        {
+            get { return _soOrient; }
+            set
+            {
+                _soOrient = value;
+                OnPropertyChanged(nameof(SPOrient));
+            }
+        }
+        private double _spHeight = 135;
+        public double SPHeight
+        {
+            get { return _spHeight; }
+            set 
+            {
+                _spHeight = value;
+                OnPropertyChanged(nameof(SPHeight));
+            }
+        }
+        private double _spWidth = 135;
+        public double SPWidth
+        {
+            get { return _spWidth; }
+            set
+            {
+                _spWidth = value;
+                OnPropertyChanged(nameof(SPWidth));
+            }
+        }
+        private double _imgSize = 100;
+        public double ImgSize
+        {
+            get { return _imgSize; }
+            set
+            {
+                _imgSize = value;
+                OnPropertyChanged(nameof(ImgSize));
+            }
+        }
+        private double _gridTBSize = 100;
+        public double GridTBSize
+        {
+            get { return _gridTBSize; }
+            set
+            {
+                _gridTBSize = value;
+                OnPropertyChanged(nameof(GridTBSize));
+            }
+        }
+        private HorizontalAlignment _TBHorizontalAlignment = HorizontalAlignment.Center;
+        public HorizontalAlignment TBHorizontalAlignment
+        {
+            get { return _TBHorizontalAlignment; }
+            set
+            {
+                _TBHorizontalAlignment = value;
+                OnPropertyChanged(nameof(TBHorizontalAlignment));
+            }
+        }
+        /// <summary>
+        /// Private data is visible Item
+        /// </summary>
+        private Visibility _visible = Visibility.Visible;
+        /// <summary>
+        /// Is Visible Item
+        /// </summary>
+        public Visibility Visible
+        {
+            get { return _visible; }
+            set
+            {
+                if (_visible != value)
+                {
+                    if (value == Visibility.Collapsed)
+                    {
+                        
+                    }
+                    _visible = value;
+                    OnPropertyChanged(nameof(Visible));
+                }
+            }
+        }
         /// <summary>
         /// Convert image to Bitmap
         /// </summary>
@@ -3349,6 +3417,14 @@ namespace Telegram_cloud
             {
                 return null;
             }
+        }
+        /// <summary>
+        /// OnPropertyChanged
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
     public class MyViewModel : INotifyPropertyChanged
